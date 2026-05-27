@@ -30,6 +30,9 @@
     .choice-title { display: block; font-weight: 700; font-size: 13px; }
     .choice-id { display: block; color: #8bb3cc; font-size: 11px; direction: ltr; text-align: left; }
     .quick { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+    details.advanced { border: 1px solid #1d304a; border-radius: 12px; padding: 12px; margin-top: 14px; background: #0c1928; }
+    details.advanced summary { cursor: pointer; color: #7aaed4; font-weight: 700; margin-bottom: 12px; }
+    details.advanced[open] summary { margin-bottom: 14px; }
     pre { direction: ltr; text-align: left; white-space: pre-wrap; background: #0c1928; border: 1px solid #1d304a; border-radius: 10px; padding: 14px; overflow: auto; }
     .note { color: #7aaed4; font-size: 13px; }
     @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
@@ -61,6 +64,10 @@
       <h2>2. عبئ البيانات</h2>
       <div class="quick" id="quickOptions"></div>
       <div class="grid" id="form"></div>
+      <details class="advanced" id="advancedBox">
+        <summary>زيد أدفانس - خيارات إضافية</summary>
+        <div class="grid" id="advancedForm"></div>
+      </details>
       <div id="relations"></div>
       <div class="row" style="margin-top:14px">
         <button id="generate" type="button">Generate JSON</button>
@@ -110,15 +117,32 @@
       organization_ar: "المنظمة بالعربي",
       organization_en: "المنظمة بالإنجليزي",
       items: "العناصر / الكلمات المفتاحية",
-      url: "الرابط"
+      url: "الرابط",
+      badge_ar: "نص شارة الإنجاز بالعربي",
+      badge_en: "نص شارة الإنجاز بالإنجليزي"
     };
 
     const fields = {
-      project: ["id", "icon", "year", "status", "title_ar", "title_en", "subtitle_ar", "subtitle_en", "description_ar", "description_en", "longDescription_ar", "longDescription_en", "roles_ar", "roles_en"],
-      certificate: ["id", "year", "name_ar", "name_en", "issuer_ar", "issuer_en", "url"],
-      achievement: ["id", "year", "title_ar", "title_en", "description_ar", "description_en"],
-      leadership: ["id", "icon", "year", "title_ar", "title_en", "organization_ar", "organization_en", "description_ar", "description_en"],
-      skill: ["id", "icon", "name_ar", "name_en", "description_ar", "description_en", "items"]
+      project: {
+        basic: ["id", "title_ar", "description_ar", "year", "icon"],
+        advanced: ["status", "subtitle_ar", "subtitle_en", "title_en", "description_en", "longDescription_ar", "longDescription_en", "roles_ar", "roles_en"]
+      },
+      certificate: {
+        basic: ["id", "name_ar", "issuer_ar", "year"],
+        advanced: ["name_en", "issuer_en", "url"]
+      },
+      achievement: {
+        basic: ["id", "title_ar", "description_ar", "year"],
+        advanced: ["title_en", "description_en"]
+      },
+      leadership: {
+        basic: ["id", "title_ar", "organization_ar", "description_ar", "year"],
+        advanced: ["icon", "title_en", "organization_en", "description_en"]
+      },
+      skill: {
+        basic: ["id", "name_ar", "description_ar", "items"],
+        advanced: ["icon", "name_en", "description_en"]
+      }
     };
 
     function renderTypeCards() {
@@ -183,8 +207,6 @@
             </select>
           </label>
           <label class="switch"><input id="featured" type="checkbox"><span><span class="choice-title">إنجاز كبير / يظهر في الرئيسية</span><span class="choice-id">featured: true</span></span></label>
-          <label>نص شارة الإنجاز بالعربي<input id="badge_ar" placeholder="مثال: المركز الأول"></label>
-          <label>نص شارة الإنجاز بالإنجليزي<input id="badge_en" placeholder="Example: 1st Place"></label>
         `;
       }
       if (type === "achievement") {
@@ -197,8 +219,17 @@
       renderTypeCards();
       renderQuickOptions(type);
       const form = document.getElementById("form");
+      const advancedForm = document.getElementById("advancedForm");
+      const advancedBox = document.getElementById("advancedBox");
       form.innerHTML = "";
-      fields[type].forEach((name) => form.appendChild(textField(name)));
+      advancedForm.innerHTML = "";
+      fields[type].basic.forEach((name) => form.appendChild(textField(name)));
+      fields[type].advanced.forEach((name) => advancedForm.appendChild(textField(name)));
+      if (type === "project") {
+        advancedForm.appendChild(textField("badge_ar"));
+        advancedForm.appendChild(textField("badge_en"));
+      }
+      advancedBox.open = false;
       const relations = document.getElementById("relations");
       relations.innerHTML = "";
       if (["project", "certificate", "achievement", "leadership"].includes(type)) relations.appendChild(checkboxGroup("3. المهارات المتعلقة", refs.skills, "skills"));
