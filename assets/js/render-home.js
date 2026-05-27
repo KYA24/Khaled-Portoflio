@@ -18,7 +18,7 @@ async function renderHome() {
     document.querySelector("[data-home-updates]").innerHTML = latestUpdates.length
       ? latestUpdates.map((item) => `
         <div class="achievement-card update-card">
-          ${item.image ? `<img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt))}" loading="lazy" onerror="this.hidden=true">` : ""}
+          ${item.image ? `<img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt))}" loading="lazy" onerror="this.remove()">` : ""}
           <div class="pcard-top">
             <div><div class="pt">${escapeHTML(t(item.title))}</div><div class="ps">${escapeHTML(item.updatedAt || item.year || "")}</div></div>
             <span class="badge badge-featured">${pageTitle("جديد", "New")}</span>
@@ -40,7 +40,7 @@ async function renderHome() {
       <div class="cc-row"><div><div class="cc-name">${escapeHTML(t(certificate.name))}</div><div class="cc-org">${escapeHTML(t(certificate.issuer))}</div></div><div class="cc-yr">${escapeHTML(certificate.year)}</div></div>`).join("");
 
     document.querySelector("[data-home-achievements]").innerHTML = achievements.filter((item) => item.featured).slice(0, 3).map((item) => `
-      <div class="achievement-card">${item.image ? `<img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt))}" loading="lazy" onerror="this.hidden=true">` : ""}<div class="pt">${escapeHTML(t(item.title))}</div><div class="pd">${escapeHTML(t(item.description))}</div><div class="tags"><span class="badge badge-featured">${escapeHTML(item.year)}</span></div></div>`).join("");
+      <div class="achievement-card">${item.image ? `<img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt))}" loading="lazy" onerror="this.remove()">` : ""}<div class="pt">${escapeHTML(t(item.title))}</div><div class="pd">${escapeHTML(t(item.description))}</div><div class="tags"><span class="badge badge-featured">${escapeHTML(item.year)}</span></div></div>`).join("");
 
     document.querySelector("[data-home-leadership]").innerHTML = leadership.slice(0, 4).map((item) => `
       <div class="tlc"><div class="tlc-ico">${item.icon || "•"}</div><div><div class="tlc-t">${escapeHTML(t(item.title))}</div><div class="tlc-o">${escapeHTML(t(item.organization))}</div></div></div>`).join("");
