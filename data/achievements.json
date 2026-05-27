@@ -12,6 +12,11 @@
     "year": "2026",
     "updatedAt": "2026-05-27",
     "url": "https://www.linkedin.com/feed/update/urn:li:activity:7447724603549896704/",
+    "image": "assets/images/achievements/unithon-global.jpg",
+    "imageAlt": {
+      "ar": "صورة فريق هدريشن مع الأمير في حفل فوز يونيثون",
+      "en": "Hydration team with the prince at the Unithon award ceremony"
+    },
     "relatedProjects": [],
     "relatedSkills": ["leadership", "project-management"],
     "featured": true
@@ -27,6 +32,11 @@
       "en": "Halla won CodeLab · Huawei incubation as a technology startup project."
     },
     "year": "2025",
+    "image": "assets/images/achievements/halla-booth.jpg",
+    "imageAlt": {
+      "ar": "فريق حلة في جناح العرض",
+      "en": "Halla team at the booth"
+    },
     "relatedProjects": ["halla"],
     "relatedSkills": ["flutter", "ux", "project-management"],
     "featured": true
@@ -42,6 +52,11 @@
       "en": "AI Arabic content platform in Ministry of Culture hackathon, with team leadership, UX design, and pitch design."
     },
     "year": "2024",
+    "image": "assets/images/achievements/mihbara-local.jpg",
+    "imageAlt": {
+      "ar": "شهادة فوز محبرة في هاكاثون اللغة العربية",
+      "en": "Mihbara local Arabic hackathon award certificate"
+    },
     "relatedProjects": ["mihbara"],
     "relatedSkills": ["ux", "ai", "leadership"],
     "featured": true

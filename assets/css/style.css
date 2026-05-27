@@ -398,6 +398,18 @@ nav {
   margin-top: .45rem;
 }
 
+.achievement-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+  background: var(--accent-dim);
+}
+
 .tag,
 .badge,
 .chip,
