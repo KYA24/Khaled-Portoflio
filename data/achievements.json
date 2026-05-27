@@ -2,18 +2,18 @@
   {
     "id": "linkedin-activity-7447724603549896704",
     "title": {
-      "ar": "إنجاز جديد موثق على LinkedIn",
-      "en": "New LinkedIn-Documented Achievement"
+      "ar": "المركز الثاني في هاكاثون يونيثون 2026",
+      "en": "Second Place at Unithon Hackathon 2026"
     },
     "description": {
-      "ar": "تحديث جديد تمت إضافته إلى البورتفوليو كرابط موثق من LinkedIn. يمكن تعديل النص التفصيلي لاحقا من ملف الإنجازات أو الأداة المحلية.",
-      "en": "A new portfolio update added as a documented LinkedIn link. The detailed text can be edited later from the achievements JSON file or the local editor."
+      "ar": "حقق فريق هدريشن المركز الثاني في هاكاثون يونيثون 2026 بعد منافسة ضمت أكثر من 250 مشروع من جامعات سعودية ودولية. تأهل المشروع ضمن أفضل 50 فكرة، ثم كان المشروع الوحيد من جامعة الملك فيصل ضمن أفضل 5 مشاريع.",
+      "en": "Hydration team achieved second place at Unithon Hackathon 2026 after competing among more than 250 projects from Saudi and international universities. The project advanced to the top 50 ideas, then became the only King Faisal University project in the top 5."
     },
     "year": "2026",
     "updatedAt": "2026-05-27",
     "url": "https://www.linkedin.com/feed/update/urn:li:activity:7447724603549896704/",
     "relatedProjects": [],
-    "relatedSkills": ["leadership"],
+    "relatedSkills": ["leadership", "project-management"],
     "featured": true
   },
   {
