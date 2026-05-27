@@ -11,6 +11,25 @@ async function renderHome() {
     document.querySelector("[data-home-stats]").innerHTML = (profile.stats || []).map((stat) => `
       <div class="st"><span class="stn">${escapeHTML(stat.value)}</span><div class="stl">${escapeHTML(t(stat.label))}</div></div>`).join("");
 
+    const latestUpdates = achievements
+      .filter((item) => item.updatedAt)
+      .sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)))
+      .slice(0, 3);
+    document.querySelector("[data-home-updates]").innerHTML = latestUpdates.length
+      ? latestUpdates.map((item) => `
+        <div class="achievement-card update-card">
+          <div class="pcard-top">
+            <div><div class="pt">${escapeHTML(t(item.title))}</div><div class="ps">${escapeHTML(item.updatedAt || item.year || "")}</div></div>
+            <span class="badge badge-featured">${pageTitle("جديد", "New")}</span>
+          </div>
+          <div class="pd">${escapeHTML(t(item.description))}</div>
+          <div class="tags">
+            ${item.url ? `<a class="lnk" href="${escapeHTML(item.url)}" target="_blank" rel="noreferrer">${pageTitle("فتح الرابط", "Open link")}</a>` : ""}
+            <a class="lnk" href="achievements.html">${pageTitle("كل الإنجازات", "All achievements")}</a>
+          </div>
+        </div>`).join("")
+      : `<div class="empty">${pageTitle("لا توجد تحديثات حديثة بعد.", "No recent updates yet.")}</div>`;
+
     document.querySelector("[data-featured-projects]").innerHTML = projects.filter((project) => project.featured).slice(0, 3).map((project) => projectCard(project, skills)).join("");
 
     const homeSkills = skills.flatMap((skill) => skill.items || []).slice(0, 18);

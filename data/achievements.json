@@ -1,5 +1,22 @@
 [
   {
+    "id": "linkedin-activity-7447724603549896704",
+    "title": {
+      "ar": "إنجاز جديد موثق على LinkedIn",
+      "en": "New LinkedIn-Documented Achievement"
+    },
+    "description": {
+      "ar": "تحديث جديد تمت إضافته إلى البورتفوليو كرابط موثق من LinkedIn. يمكن تعديل النص التفصيلي لاحقا من ملف الإنجازات أو الأداة المحلية.",
+      "en": "A new portfolio update added as a documented LinkedIn link. The detailed text can be edited later from the achievements JSON file or the local editor."
+    },
+    "year": "2026",
+    "updatedAt": "2026-05-27",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7447724603549896704/",
+    "relatedProjects": [],
+    "relatedSkills": ["leadership"],
+    "featured": true
+  },
+  {
     "id": "halla-codelab",
     "title": {
       "ar": "احتضان CodeLab لمشروع حلة",

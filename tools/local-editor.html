@@ -118,6 +118,7 @@
       organization_en: "المنظمة بالإنجليزي",
       items: "العناصر / الكلمات المفتاحية",
       url: "الرابط",
+      updatedAt: "تاريخ الإضافة للبورتفوليو",
       badge_ar: "نص شارة الإنجاز بالعربي",
       badge_en: "نص شارة الإنجاز بالإنجليزي"
     };
@@ -133,7 +134,7 @@
       },
       achievement: {
         basic: ["id", "title_ar", "description_ar", "year"],
-        advanced: ["title_en", "description_en"]
+        advanced: ["title_en", "description_en", "updatedAt", "url"]
       },
       leadership: {
         basic: ["id", "title_ar", "organization_ar", "description_ar", "year"],
@@ -263,7 +264,7 @@
       } else if (type === "certificate") {
         obj = { id: value("id"), name: { ar: value("name_ar"), en: value("name_en") }, issuer: { ar: value("issuer_ar"), en: value("issuer_en") }, year: value("year"), skills: checked("skills"), projects: checked("projects"), url: value("url") };
       } else if (type === "achievement") {
-        obj = { id: value("id"), title: { ar: value("title_ar"), en: value("title_en") }, description: { ar: value("description_ar"), en: value("description_en") }, year: value("year"), relatedProjects: checked("projects"), relatedSkills: checked("skills"), featured: isChecked("featured") };
+        obj = { id: value("id"), title: { ar: value("title_ar"), en: value("title_en") }, description: { ar: value("description_ar"), en: value("description_en") }, year: value("year"), updatedAt: value("updatedAt"), url: value("url"), relatedProjects: checked("projects"), relatedSkills: checked("skills"), featured: isChecked("featured") };
       } else if (type === "leadership") {
         obj = { id: value("id"), icon: value("icon"), title: { ar: value("title_ar"), en: value("title_en") }, organization: { ar: value("organization_ar"), en: value("organization_en") }, year: value("year"), description: { ar: value("description_ar"), en: value("description_en") }, skills: checked("skills") };
       } else {

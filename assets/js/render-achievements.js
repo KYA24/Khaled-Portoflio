@@ -10,7 +10,7 @@ async function renderAchievementsPage() {
       return `<div class="achievement-card">
         <div class="pcard-top"><div><div class="pt">${escapeHTML(t(achievement.title))}</div><div class="ps">${escapeHTML(achievement.year)}</div></div>${achievement.featured ? `<span class="badge badge-featured">${pageTitle("مميز", "Featured")}</span>` : ""}</div>
         <div class="pd">${escapeHTML(t(achievement.description))}</div>
-        <div class="chips">${relatedProjects.map(projectChip).join("")}${relatedSkills.map(skillChip).join("")}</div>
+        <div class="chips">${relatedProjects.map(projectChip).join("")}${relatedSkills.map(skillChip).join("")}${achievement.url ? `<a class="chip" href="${escapeHTML(achievement.url)}" target="_blank" rel="noreferrer">${pageTitle("رابط التوثيق", "Source link")}</a>` : ""}</div>
       </div>`;
     };
     document.querySelector("[data-featured-achievements]").innerHTML = featured.map(card).join("");
