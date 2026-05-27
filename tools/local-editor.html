@@ -8,7 +8,8 @@
     body { margin: 0; background: #08111e; color: #dce8f2; font-family: Arial, sans-serif; line-height: 1.6; }
     main { max-width: 1000px; margin: 0 auto; padding: 28px 18px; }
     h1 { margin-bottom: 4px; }
-    p { color: #8bb3cc; }
+    h2 { margin: 0 0 10px; font-size: 18px; }
+    p { color: #8bb3cc; margin: 0 0 12px; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: #8bb3cc; }
     input, textarea, select { border: 1px solid #1d304a; border-radius: 8px; background: #101e30; color: #dce8f2; padding: 9px 10px; }
@@ -17,8 +18,18 @@
     button:hover { border-color: #7aaed4; color: #7aaed4; }
     section { border: 1px solid #1d304a; border-radius: 12px; padding: 16px; margin-top: 16px; background: #101e30; }
     .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-    .checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
-    .checks label { flex-direction: row; align-items: center; color: #dce8f2; }
+    .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 10px; }
+    .type-card { border: 1px solid #1d304a; border-radius: 10px; background: #0c1928; padding: 12px; cursor: pointer; color: #dce8f2; }
+    .type-card input { display: none; }
+    .type-card:has(input:checked) { border-color: #7aaed4; background: #12304a; }
+    .type-title { display: block; font-weight: 700; }
+    .type-help { display: block; color: #8bb3cc; font-size: 12px; }
+    .checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
+    .checks label, .switch { flex-direction: row; align-items: flex-start; color: #dce8f2; background: #0c1928; border: 1px solid #1d304a; border-radius: 8px; padding: 8px; }
+    .checks input, .switch input { margin-top: 4px; }
+    .choice-title { display: block; font-weight: 700; font-size: 13px; }
+    .choice-id { display: block; color: #8bb3cc; font-size: 11px; direction: ltr; text-align: left; }
+    .quick { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
     pre { direction: ltr; text-align: left; white-space: pre-wrap; background: #0c1928; border: 1px solid #1d304a; border-radius: 10px; padding: 14px; overflow: auto; }
     .note { color: #7aaed4; font-size: 13px; }
     @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
@@ -30,16 +41,16 @@
     <p>أداة محلية فقط لتوليد كائن JSON أو تحديث ملف JSON تختاره من جهازك. لا يوجد تسجيل دخول ولا Backend.</p>
 
     <section>
-      <div class="row">
-        <label>Content type
-          <select id="type">
-            <option value="project">Project</option>
-            <option value="certificate">Certificate</option>
-            <option value="achievement">Achievement</option>
-            <option value="leadership">Leadership Item</option>
-            <option value="skill">Skill</option>
-          </select>
-        </label>
+      <h2>1. اختر نوع المدخل</h2>
+      <div class="type-grid" id="typeCards"></div>
+      <select id="type" hidden>
+        <option value="project">Project</option>
+        <option value="certificate">Certificate</option>
+        <option value="achievement">Achievement</option>
+        <option value="leadership">Leadership Item</option>
+        <option value="skill">Skill</option>
+      </select>
+      <div class="row" style="margin-top:14px">
         <button id="loadRefs" type="button">Load reference JSON files</button>
         <button id="openTarget" type="button">Choose target JSON file</button>
         <span class="note" id="fileStatus">No file selected</span>
@@ -47,6 +58,8 @@
     </section>
 
     <section>
+      <h2>2. عبئ البيانات</h2>
+      <div class="quick" id="quickOptions"></div>
       <div class="grid" id="form"></div>
       <div id="relations"></div>
       <div class="row" style="margin-top:14px">
@@ -67,13 +80,63 @@
     let selectedHandle = null;
     let selectedArray = [];
 
+    const typeInfo = {
+      project: ["مشروع", "تطبيق، موقع، أداة، أو نظام"],
+      certificate: ["شهادة", "شهادة أو معسكر تدريبي"],
+      achievement: ["إنجاز", "فوز، احتضان، تقييم، أو نتيجة مهمة"],
+      leadership: ["قيادة", "نادي، لجنة، تطوع، أو تجربة"],
+      skill: ["مهارة", "مهارة تظهر في صفحة المهارات"]
+    };
+
+    const fieldLabels = {
+      id: "ID ثابت بالإنجليزي",
+      icon: "الأيقونة",
+      year: "السنة",
+      status: "الحالة",
+      title_ar: "العنوان بالعربي",
+      title_en: "العنوان بالإنجليزي",
+      subtitle_ar: "العنوان الفرعي بالعربي",
+      subtitle_en: "العنوان الفرعي بالإنجليزي",
+      description_ar: "وصف مختصر بالعربي",
+      description_en: "وصف مختصر بالإنجليزي",
+      longDescription_ar: "وصف تفصيلي بالعربي",
+      longDescription_en: "وصف تفصيلي بالإنجليزي",
+      roles_ar: "الأدوار بالعربي",
+      roles_en: "الأدوار بالإنجليزي",
+      name_ar: "الاسم بالعربي",
+      name_en: "الاسم بالإنجليزي",
+      issuer_ar: "الجهة بالعربي",
+      issuer_en: "الجهة بالإنجليزي",
+      organization_ar: "المنظمة بالعربي",
+      organization_en: "المنظمة بالإنجليزي",
+      items: "العناصر / الكلمات المفتاحية",
+      url: "الرابط"
+    };
+
     const fields = {
       project: ["id", "icon", "year", "status", "title_ar", "title_en", "subtitle_ar", "subtitle_en", "description_ar", "description_en", "longDescription_ar", "longDescription_en", "roles_ar", "roles_en"],
       certificate: ["id", "year", "name_ar", "name_en", "issuer_ar", "issuer_en", "url"],
-      achievement: ["id", "year", "title_ar", "title_en", "description_ar", "description_en", "featured"],
+      achievement: ["id", "year", "title_ar", "title_en", "description_ar", "description_en"],
       leadership: ["id", "icon", "year", "title_ar", "title_en", "organization_ar", "organization_en", "description_ar", "description_en"],
       skill: ["id", "icon", "name_ar", "name_en", "description_ar", "description_en", "items"]
     };
+
+    function renderTypeCards() {
+      const current = document.getElementById("type").value;
+      document.getElementById("typeCards").innerHTML = Object.entries(typeInfo).map(([value, info]) => `
+        <label class="type-card">
+          <input type="radio" name="contentType" value="${value}" ${value === current ? "checked" : ""}>
+          <span class="type-title">${info[0]}</span>
+          <span class="type-help">${info[1]}</span>
+        </label>
+      `).join("");
+      document.querySelectorAll("[name='contentType']").forEach((radio) => {
+        radio.addEventListener("change", () => {
+          document.getElementById("type").value = radio.value;
+          renderForm();
+        });
+      });
+    }
 
     function textField(name) {
       const area = name.includes("description") || name.includes("roles") || name === "items";
@@ -81,35 +144,66 @@
       input.id = name;
       input.placeholder = name.includes("roles") || name === "items" ? "comma separated values" : "";
       const label = document.createElement("label");
-      label.textContent = name;
+      label.textContent = fieldLabels[name] || name;
       label.appendChild(input);
       return label;
     }
 
+    function labelFor(item, group) {
+      if (group === "skills") return item.name?.ar || item.name?.en || item.id;
+      if (group === "projects") return item.title?.ar || item.title?.en || item.id;
+      if (group === "certificates") return item.name?.ar || item.name?.en || item.id;
+      return item.id;
+    }
+
     function checkboxGroup(title, list, group) {
       const wrap = document.createElement("section");
-      wrap.innerHTML = `<p>${title}</p>`;
+      wrap.innerHTML = `<h2>${title}</h2><p>اختر العناصر المرتبطة. سيتم حفظ العلاقة بالـ ID تلقائيا.</p>`;
       const box = document.createElement("div");
       box.className = "checks";
       list.forEach((item) => {
         const label = document.createElement("label");
-        label.innerHTML = `<input type="checkbox" data-group="${group}" value="${item.id}"> ${item.id}`;
+        label.innerHTML = `<input type="checkbox" data-group="${group}" value="${item.id}"><span><span class="choice-title">${labelFor(item, group)}</span><span class="choice-id">${item.id}</span></span>`;
         box.appendChild(label);
       });
+      if (!list.length) box.innerHTML = `<p>اضغط Load reference JSON files لإظهار الخيارات.</p>`;
       wrap.appendChild(box);
       return wrap;
     }
 
+    function renderQuickOptions(type) {
+      const quick = document.getElementById("quickOptions");
+      quick.innerHTML = "";
+      if (type === "project") {
+        quick.innerHTML = `
+          <label>تصنيف المشروع
+            <select id="category">
+              <option value="practical">مشروع تطبيقي</option>
+              <option value="achievement">إنجاز / هاكاثون</option>
+            </select>
+          </label>
+          <label class="switch"><input id="featured" type="checkbox"><span><span class="choice-title">إنجاز كبير / يظهر في الرئيسية</span><span class="choice-id">featured: true</span></span></label>
+          <label>نص شارة الإنجاز بالعربي<input id="badge_ar" placeholder="مثال: المركز الأول"></label>
+          <label>نص شارة الإنجاز بالإنجليزي<input id="badge_en" placeholder="Example: 1st Place"></label>
+        `;
+      }
+      if (type === "achievement") {
+        quick.innerHTML = `<label class="switch"><input id="featured" type="checkbox"><span><span class="choice-title">إنجاز كبير / مميز</span><span class="choice-id">featured: true</span></span></label>`;
+      }
+    }
+
     function renderForm() {
       const type = document.getElementById("type").value;
+      renderTypeCards();
+      renderQuickOptions(type);
       const form = document.getElementById("form");
       form.innerHTML = "";
       fields[type].forEach((name) => form.appendChild(textField(name)));
       const relations = document.getElementById("relations");
       relations.innerHTML = "";
-      if (["project", "certificate", "achievement", "leadership"].includes(type)) relations.appendChild(checkboxGroup("Related skills", refs.skills, "skills"));
-      if (["certificate", "achievement"].includes(type)) relations.appendChild(checkboxGroup("Related projects", refs.projects, "projects"));
-      if (type === "project") relations.appendChild(checkboxGroup("Related certificates", refs.certificates, "certificates"));
+      if (["project", "certificate", "achievement", "leadership"].includes(type)) relations.appendChild(checkboxGroup("3. المهارات المتعلقة", refs.skills, "skills"));
+      if (["certificate", "achievement"].includes(type)) relations.appendChild(checkboxGroup("4. المشاريع المتعلقة", refs.projects, "projects"));
+      if (type === "project") relations.appendChild(checkboxGroup("4. الشهادات المتعلقة", refs.certificates, "certificates"));
       generate();
     }
 
@@ -125,15 +219,20 @@
       return [...document.querySelectorAll(`[data-group="${group}"]:checked`)].map((item) => item.value);
     }
 
+    function isChecked(id) {
+      return document.getElementById(id)?.checked || false;
+    }
+
     function generate() {
       const type = document.getElementById("type").value;
       let obj;
       if (type === "project") {
-        obj = { id: value("id"), type: "project", category: "practical", featured: false, icon: value("icon"), year: value("year"), status: value("status"), title: { ar: value("title_ar"), en: value("title_en") }, subtitle: { ar: value("subtitle_ar"), en: value("subtitle_en") }, description: { ar: value("description_ar"), en: value("description_en") }, longDescription: { ar: value("longDescription_ar"), en: value("longDescription_en") }, roles: { ar: csv("roles_ar"), en: csv("roles_en") }, skills: checked("skills"), certificates: checked("certificates"), links: { demo: "", github: "", caseStudy: "" }, badges: [] };
+        const badge = value("badge_ar") || value("badge_en") ? [{ type: isChecked("featured") ? "featured" : "default", label: { ar: value("badge_ar"), en: value("badge_en") } }] : [];
+        obj = { id: value("id"), type: "project", category: value("category") || "practical", featured: isChecked("featured"), icon: value("icon"), year: value("year"), status: value("status"), title: { ar: value("title_ar"), en: value("title_en") }, subtitle: { ar: value("subtitle_ar"), en: value("subtitle_en") }, description: { ar: value("description_ar"), en: value("description_en") }, longDescription: { ar: value("longDescription_ar"), en: value("longDescription_en") }, roles: { ar: csv("roles_ar"), en: csv("roles_en") }, skills: checked("skills"), certificates: checked("certificates"), links: { demo: "", github: "", caseStudy: "" }, badges: badge };
       } else if (type === "certificate") {
         obj = { id: value("id"), name: { ar: value("name_ar"), en: value("name_en") }, issuer: { ar: value("issuer_ar"), en: value("issuer_en") }, year: value("year"), skills: checked("skills"), projects: checked("projects"), url: value("url") };
       } else if (type === "achievement") {
-        obj = { id: value("id"), title: { ar: value("title_ar"), en: value("title_en") }, description: { ar: value("description_ar"), en: value("description_en") }, year: value("year"), relatedProjects: checked("projects"), relatedSkills: checked("skills"), featured: value("featured").toLowerCase() === "true" };
+        obj = { id: value("id"), title: { ar: value("title_ar"), en: value("title_en") }, description: { ar: value("description_ar"), en: value("description_en") }, year: value("year"), relatedProjects: checked("projects"), relatedSkills: checked("skills"), featured: isChecked("featured") };
       } else if (type === "leadership") {
         obj = { id: value("id"), icon: value("icon"), title: { ar: value("title_ar"), en: value("title_en") }, organization: { ar: value("organization_ar"), en: value("organization_en") }, year: value("year"), description: { ar: value("description_ar"), en: value("description_en") }, skills: checked("skills") };
       } else {
