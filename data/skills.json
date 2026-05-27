@@ -1,0 +1,132 @@
+[
+  {
+    "id": "ux",
+    "icon": "🎨",
+    "name": {
+      "ar": "UX/UI Design",
+      "en": "UX/UI Design"
+    },
+    "description": {
+      "ar": "تصميم واجهات وتجربة مستخدم موثقة بمشاريع حقيقية وصلت للمستخدم الفعلي.",
+      "en": "Interface and UX design backed by real projects that reached actual users."
+    },
+    "items": ["Figma", "Framer", "Bootstrap", "Design Thinking", "Prototyping"]
+  },
+  {
+    "id": "flutter",
+    "icon": "📱",
+    "name": {
+      "ar": "Flutter",
+      "en": "Flutter"
+    },
+    "description": {
+      "ar": "تطوير تطبيقات iOS وAndroid. استخدمته في مشروع التخرج وحلة.",
+      "en": "iOS and Android app development. Used in graduation project and Halla."
+    },
+    "items": ["Dart", "Cross-platform", "State Management"]
+  },
+  {
+    "id": "ai",
+    "icon": "🤖",
+    "name": {
+      "ar": "AI Integration",
+      "en": "AI Integration"
+    },
+    "description": {
+      "ar": "دمج نماذج LLM في أنظمة حقيقية: شهادتي وAI Task Management.",
+      "en": "Integrating LLM models into real systems: Shahidati and AI Task Management."
+    },
+    "items": ["LLM", "OCR", "Gemma", "ElevenLabs"]
+  },
+  {
+    "id": "automation",
+    "icon": "⚡",
+    "name": {
+      "ar": "Automation",
+      "en": "Automation"
+    },
+    "description": {
+      "ar": "أتمتة سير العمل باستخدام Make.com وN8N وPython وCloudflare.",
+      "en": "Workflow automation using Make.com, N8N, Python, and Cloudflare."
+    },
+    "items": ["Make.com", "N8N", "Cloudflare", "Python"]
+  },
+  {
+    "id": "python",
+    "icon": "🐍",
+    "name": {
+      "ar": "Python",
+      "en": "Python"
+    },
+    "description": {
+      "ar": "برمجة أدوات وتحليل بيانات وبناء أنظمة. موثق بمشروع شهادتي.",
+      "en": "Tool scripting, data analysis, system building. Backed by Shahidati."
+    },
+    "items": ["OCR", "CLI", "Data Analysis", "Streamlit"]
+  },
+  {
+    "id": "systems-analysis",
+    "icon": "🗄",
+    "name": {
+      "ar": "Databases & Systems Analysis",
+      "en": "Databases & Systems Analysis"
+    },
+    "description": {
+      "ar": "تصميم قواعد بيانات علائقية وتحليل الأنظمة. موثق في مشروع الزاد.",
+      "en": "Relational DB design and systems analysis. Backed by Al-Zad."
+    },
+    "items": ["SQL", "Laravel", "Notion", "PHP MyAdmin"]
+  },
+  {
+    "id": "data-analysis",
+    "icon": "📊",
+    "name": {
+      "ar": "Data Analysis",
+      "en": "Data Analysis"
+    },
+    "description": {
+      "ar": "تحليل البيانات بـ Power BI وSQL. شهادات معتمدة ومعسكر تطبيقي.",
+      "en": "Data analysis with Power BI and SQL. Certified with practical bootcamp."
+    },
+    "items": ["Power BI", "SQL", "Excel", "Streamlit"]
+  },
+  {
+    "id": "project-management",
+    "icon": "🗓",
+    "name": {
+      "ar": "Project Management",
+      "en": "Project Management"
+    },
+    "description": {
+      "ar": "إدارة مشاريع ريادية وأكاديمية. شهادة CAPM-aligned وخبرة في الهاكاثونات.",
+      "en": "Managing startup and academic projects. CAPM-aligned cert plus hackathon experience."
+    },
+    "items": ["Agile", "Kanban", "Stakeholder Mgmt", "Documentation"]
+  },
+  {
+    "id": "web-frontend",
+    "icon": "💻",
+    "name": {
+      "ar": "Web Frontend",
+      "en": "Web Frontend"
+    },
+    "description": {
+      "ar": "تطوير واجهات ويب ولوحات تحكم بتصميم بسيط وواضح.",
+      "en": "Building clear web interfaces and dashboards."
+    },
+    "items": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+  },
+  {
+    "id": "leadership",
+    "icon": "🤝",
+    "name": {
+      "ar": "Team Leadership",
+      "en": "Team Leadership"
+    },
+    "description": {
+      "ar": "قيادة فرق طلابية ومشاريع هاكاثون وتجارب أندية.",
+      "en": "Leading student teams, hackathon projects, and club initiatives."
+    },
+    "items": ["Team Coordination", "Pitching", "Workshops"]
+  }
+]

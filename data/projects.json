@@ -1,0 +1,248 @@
+[
+  {
+    "id": "alzad",
+    "type": "project",
+    "category": "practical",
+    "featured": true,
+    "icon": "🏗",
+    "year": "2025",
+    "status": "completed",
+    "title": {
+      "ar": "الزاد",
+      "en": "Al-Zad"
+    },
+    "subtitle": {
+      "ar": "مشروع التخرج · 2025",
+      "en": "Graduation Project · 2025"
+    },
+    "description": {
+      "ar": "تطبيق متعدد المنصات لعدة فئات مستخدمين.",
+      "en": "Cross-platform app for multiple user types."
+    },
+    "longDescription": {
+      "ar": "مشروع تخرج متكامل على iOS وAndroid مع خلفية Laravel وذكاء اصطناعي. أجريت دراسة جدوى كاملة، حللت الأنظمة، صممت بـ Figma، وطورت بـ Flutter.",
+      "en": "Full graduation project on iOS and Android with Laravel backend and AI integration. Conducted feasibility study, systems analysis, designed with Figma, and built with Flutter."
+    },
+    "roles": {
+      "ar": ["محلل أنظمة", "مصمم UX/UI", "مطور Flutter", "دراسة جدوى"],
+      "en": ["Systems Analyst", "UX/UI Designer", "Flutter Developer", "Feasibility Study"]
+    },
+    "skills": ["flutter", "systems-analysis", "ux", "ai"],
+    "certificates": ["flutter-bc", "ux-bc"],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": []
+  },
+  {
+    "id": "halla",
+    "type": "project",
+    "category": "achievement",
+    "featured": true,
+    "icon": "🗺",
+    "year": "2023–2025",
+    "status": "completed",
+    "title": {
+      "ar": "حلة | Halla",
+      "en": "Halla | حلة"
+    },
+    "subtitle": {
+      "ar": "تطبيق سياحي · 2023–2025",
+      "en": "Tourism App · 2023–2025"
+    },
+    "description": {
+      "ar": "خدمات سياحية للأحساء. فاز باحتضان CodeLab · Huawei.",
+      "en": "Tourism services app for Al-Ahsa. Won CodeLab incubation."
+    },
+    "longDescription": {
+      "ar": "مشروع ريادي سياحي. صممت الواجهات وطورت التطبيق وأدرت المشروع. شارك في هاكاثونات وبرنامج منشآت 8 أسابيع.",
+      "en": "Startup tourism project. Designed UI, developed the app, managed the project. Participated in hackathons and Monsha'at pre-accelerator for 8 weeks."
+    },
+    "roles": {
+      "ar": ["مصمم UX/UI", "مطور Flutter", "مدير مشروع"],
+      "en": ["UX/UI Designer", "Flutter Developer", "Project Manager"]
+    },
+    "skills": ["flutter", "ux", "project-management"],
+    "certificates": ["flutter-bc"],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": [
+      {
+        "type": "featured",
+        "label": {
+          "ar": "فاز باحتضان CodeLab",
+          "en": "Won CodeLab Incubation"
+        }
+      }
+    ]
+  },
+  {
+    "id": "mihbara",
+    "type": "project",
+    "category": "achievement",
+    "featured": true,
+    "icon": "✦",
+    "year": "2024",
+    "status": "completed",
+    "title": {
+      "ar": "محبرة",
+      "en": "Mihbara"
+    },
+    "subtitle": {
+      "ar": "هاكاثون اللغة العربية · 2024",
+      "en": "Arabic Hackathon · 2024"
+    },
+    "description": {
+      "ar": "منصة AI لصناعة المحتوى العربي. المركز الثالث في هاكاثون اللغة العربي من وزارة الثقافة.",
+      "en": "AI Arabic content platform. 1st place, only winner from KFU."
+    },
+    "longDescription": {
+      "ar": "منصة ذكاء اصطناعي للكتاب العرب. قدت الفريق في 36 ساعة للفوز بالمركز الثالث في هاكاثون وزارة الثقافة.",
+      "en": "AI platform for Arabic content creation. Led team through a 36-hour hackathon, designed full UX, and won 1st place at Ministry of Culture."
+    },
+    "roles": {
+      "ar": ["قائد UX/UI", "قيادة الفريق", "تصميم العرض"],
+      "en": ["UX/UI Lead", "Team Leadership", "Pitch Design"]
+    },
+    "skills": ["ux", "ai", "leadership"],
+    "certificates": ["ux-bc"],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": [
+      {
+        "type": "featured",
+        "label": {
+          "ar": "المركز الأول · وزارة الثقافة",
+          "en": "1st Place · Ministry of Culture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "shahidati",
+    "type": "project",
+    "category": "practical",
+    "featured": false,
+    "icon": "◎",
+    "year": "2025",
+    "status": "completed",
+    "title": {
+      "ar": "شهادتي",
+      "en": "Shahidati"
+    },
+    "subtitle": {
+      "ar": "أداة Python · 2025",
+      "en": "Python Tool · 2025"
+    },
+    "description": {
+      "ar": "OCR + LLM لاستخراج بيانات الشهادات من PDF والصور.",
+      "en": "OCR + LLM to extract certificate data from PDFs/images."
+    },
+    "longDescription": {
+      "ar": "أداة مفتوحة المصدر بـ Python تعتمد OCR ونموذج Gemma. صممت منطق التحليل وهيكل المخرجات وواجهة CLI.",
+      "en": "Open source Python tool using OCR and Gemma via Ollama. Designed parsing logic, output schema, and CLI interface."
+    },
+    "roles": {
+      "ar": ["مطور Python", "مهندس AI", "Open Source"],
+      "en": ["Python Developer", "AI Engineer", "Open Source"]
+    },
+    "skills": ["python", "ai"],
+    "certificates": [],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": [
+      {
+        "type": "default",
+        "label": {
+          "ar": "مفتوح المصدر",
+          "en": "Open Source"
+        }
+      }
+    ]
+  },
+  {
+    "id": "barbershop",
+    "type": "project",
+    "category": "practical",
+    "featured": false,
+    "icon": "✂",
+    "year": "2024",
+    "status": "completed",
+    "title": {
+      "ar": "Barbershop",
+      "en": "Barbershop"
+    },
+    "subtitle": {
+      "ar": "نظام حجز حلاقة · 2024",
+      "en": "Barbershop Booking System · 2024"
+    },
+    "description": {
+      "ar": "داشبورد ويب لحجز مواعيد الحلاقة وإدارة الطلبات والتقييمات.",
+      "en": "Web dashboard for booking appointments, managing orders and reviews."
+    },
+    "longDescription": {
+      "ar": "نظام داشبورد ويب لإدارة صالون حلاقة. يشمل قائمة انتظار الطلبات، التقييمات، وإدارة الموظفين. طورت الواجهة الأمامية والخلفية.",
+      "en": "Web dashboard system for a barbershop. Includes order queue, reviews/ratings, and staff management. Developed both frontend and backend."
+    },
+    "roles": {
+      "ar": ["مصمم UI", "مطور الواجهة الأمامية", "تصميم النظام"],
+      "en": ["UI Designer", "Frontend Developer", "System Design"]
+    },
+    "skills": ["ux", "web-frontend"],
+    "certificates": [],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": []
+  },
+  {
+    "id": "aitask",
+    "type": "project",
+    "category": "practical",
+    "featured": false,
+    "icon": "⚙",
+    "year": "2025",
+    "status": "completed",
+    "title": {
+      "ar": "AI Task Management",
+      "en": "AI Task Management"
+    },
+    "subtitle": {
+      "ar": "أتمتة ذكية · 2025",
+      "en": "Smart Automation · 2025"
+    },
+    "description": {
+      "ar": "Notion + Telegram Bot + صوت + NLP. إدارة مهام تلقائية.",
+      "en": "Notion + Telegram Bot + voice + NLP auto-entry."
+    },
+    "longDescription": {
+      "ar": "قاعدة بيانات Notion منظمة مع Telegram Bot وElevenLabs للصوت وCloudflare وطبقة NLP للإدخال التلقائي.",
+      "en": "Structured Notion database + Telegram Bot + ElevenLabs voice + Cloudflare + NLP layer for automatic data entry."
+    },
+    "roles": {
+      "ar": ["مهندس الأنظمة", "مطور Automation", "تكامل AI"],
+      "en": ["Systems Engineer", "Automation Dev", "AI Integration"]
+    },
+    "skills": ["python", "ai", "automation", "systems-analysis"],
+    "certificates": [],
+    "links": {
+      "demo": "",
+      "github": "",
+      "caseStudy": ""
+    },
+    "badges": []
+  }
+]

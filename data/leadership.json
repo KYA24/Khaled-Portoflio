@@ -1,0 +1,128 @@
+[
+  {
+    "id": "futech-president",
+    "icon": "🏛",
+    "title": {
+      "ar": "رئيس نادي Futech",
+      "en": "Club President - Futech"
+    },
+    "organization": {
+      "ar": "كلية علوم الحاسب · KFU",
+      "en": "College of CS · KFU"
+    },
+    "year": "2024–",
+    "description": {
+      "ar": "قاد النادي، نظم اليوم العالمي للبرمجة، ورشة Notion لـ50+ طالب، وبنى نظام Notion للأندية.",
+      "en": "Led club, organized World Programming Day, delivered Notion workshop for 50+ students, built club ops system."
+    },
+    "skills": ["leadership", "project-management", "automation"]
+  },
+  {
+    "id": "pti-vice-president",
+    "icon": "🎓",
+    "title": {
+      "ar": "نائب رئيس نادي PTI",
+      "en": "Vice President - PTI"
+    },
+    "organization": {
+      "ar": "كلية علوم الحاسب · KFU",
+      "en": "College of CS · KFU"
+    },
+    "year": "2023–24",
+    "description": {
+      "ar": "دعم الإدارة، ورشة Hit the Book in a Gentle Way. النادي فاز بجائزة أفضل ناد.",
+      "en": "Supported operations, delivered Hit the Book in a Gentle Way. Club won Best Club Award."
+    },
+    "skills": ["leadership", "project-management"]
+  },
+  {
+    "id": "mohibah-media",
+    "icon": "📢",
+    "title": {
+      "ar": "رئيس قسم الإعلام · موهبة",
+      "en": "Media Division Head · Mohibah"
+    },
+    "organization": {
+      "ar": "KFU",
+      "en": "KFU"
+    },
+    "year": "2023–24",
+    "description": {
+      "ar": "طور الهوية الإعلامية وقاد فريق المحتوى والتصميم والتغطية.",
+      "en": "Developed media identity, led content and event coverage team."
+    },
+    "skills": ["leadership", "ux"]
+  },
+  {
+    "id": "aip-mobile",
+    "icon": "📱",
+    "title": {
+      "ar": "رئيس لجنة تطبيقات الجوال · AIP",
+      "en": "Mobile Dev Head · AIP"
+    },
+    "organization": {
+      "ar": "KFU",
+      "en": "KFU"
+    },
+    "year": "2024",
+    "description": {
+      "ar": "درب الأعضاء على Flutter وأعد مواد تعليمية.",
+      "en": "Trained members on Flutter UI, produced design learning materials."
+    },
+    "skills": ["flutter", "leadership"]
+  },
+  {
+    "id": "mathala-supervisor",
+    "icon": "🔧",
+    "title": {
+      "ar": "مشرف منصة مظلة",
+      "en": "Platform Supervisor - Mathala"
+    },
+    "organization": {
+      "ar": "KFU",
+      "en": "KFU"
+    },
+    "year": "2024",
+    "description": {
+      "ar": "جمع المتطلبات وأشرف على التطوير والتدريب.",
+      "en": "Gathered requirements, supervised development and training."
+    },
+    "skills": ["systems-analysis", "leadership"]
+  },
+  {
+    "id": "basmat-instructor",
+    "icon": "🌱",
+    "title": {
+      "ar": "معلم تقني متطوع",
+      "en": "Technical Instructor (Volunteer)"
+    },
+    "organization": {
+      "ar": "جمعية بصمات · برنامج بكره",
+      "en": "Basmat · Bokra Program"
+    },
+    "year": "صيف 2024",
+    "description": {
+      "ar": "أشرف على MVP لـ3 مشاريع ريادية. درب طلاب المتوسطة على التقنية والريادة.",
+      "en": "Supervised MVP of 3 startups. Trained middle-school students in tech and entrepreneurship."
+    },
+    "skills": ["leadership", "project-management"]
+  },
+  {
+    "id": "aramco-consulting",
+    "icon": "💼",
+    "title": {
+      "ar": "بطولة أرامكو الاستشارية",
+      "en": "Consulting Championship"
+    },
+    "organization": {
+      "ar": "أرامكو",
+      "en": "Aramco"
+    },
+    "year": "2025",
+    "description": {
+      "ar": "فريق متعدد التخصصات - حل استراتيجي قائم على البيانات.",
+      "en": "Cross-disciplinary team - strategic data-driven solution."
+    },
+    "skills": ["data-analysis", "project-management", "leadership"]
+  }
+]

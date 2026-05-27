@@ -1,0 +1,47 @@
+[
+  {
+    "id": "halla-codelab",
+    "title": {
+      "ar": "احتضان CodeLab لمشروع حلة",
+      "en": "CodeLab Incubation for Halla"
+    },
+    "description": {
+      "ar": "فاز مشروع حلة باحتضان CodeLab · Huawei ضمن مسار المشاريع الريادية التقنية.",
+      "en": "Halla won CodeLab · Huawei incubation as a technology startup project."
+    },
+    "year": "2025",
+    "relatedProjects": ["halla"],
+    "relatedSkills": ["flutter", "ux", "project-management"],
+    "featured": true
+  },
+  {
+    "id": "mihbara-culture",
+    "title": {
+      "ar": "إنجاز محبرة في هاكاثون اللغة العربية",
+      "en": "Mihbara Arabic Hackathon Achievement"
+    },
+    "description": {
+      "ar": "منصة ذكاء اصطناعي لصناعة المحتوى العربي ضمن هاكاثون وزارة الثقافة، مع قيادة الفريق وتصميم تجربة المستخدم والعرض.",
+      "en": "AI Arabic content platform in Ministry of Culture hackathon, with team leadership, UX design, and pitch design."
+    },
+    "year": "2024",
+    "relatedProjects": ["mihbara"],
+    "relatedSkills": ["ux", "ai", "leadership"],
+    "featured": true
+  },
+  {
+    "id": "alzad-graduation",
+    "title": {
+      "ar": "مشروع تخرج متكامل",
+      "en": "Full Graduation Project"
+    },
+    "description": {
+      "ar": "بناء مشروع الزاد كتطبيق متعدد المنصات مع تحليل أنظمة، تصميم واجهات، Flutter، Laravel، وتكامل ذكاء اصطناعي.",
+      "en": "Built Al-Zad as a cross-platform app with systems analysis, UI design, Flutter, Laravel, and AI integration."
+    },
+    "year": "2025",
+    "relatedProjects": ["alzad"],
+    "relatedSkills": ["flutter", "systems-analysis", "ux", "ai"],
+    "featured": true
+  }
+]

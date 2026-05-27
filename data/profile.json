@@ -1,0 +1,44 @@
+{
+  "name": {
+    "ar": "خالد العتيق",
+    "en": "Khaled Alateeq"
+  },
+  "role": {
+    "ar": "مصمم منتج · مطور تطبيقات · مدير مشاريع",
+    "en": "Product Designer · App Developer · Project Manager"
+  },
+  "bio": {
+    "ar": "أعمل في تقاطع التقنية والتصميم وإدارة المشاريع. بنيت تطبيقات وصلت للمستخدم، فزت في هاكاثونات، وقدت فرقا وأندية. شغوف بدمج الذكاء الاصطناعي والأتمتة في أنظمة حقيقية.",
+    "en": "I work at the intersection of technology, design, and project management. Built real apps, won hackathons, led clubs and teams. Passionate about AI integration and automation in real systems."
+  },
+  "email": "",
+  "phone": "",
+  "links": {
+    "linkedin": "https://linkedin.com/in/khaled-alateeq",
+    "github": "",
+    "x": ""
+  },
+  "stats": [
+    {
+      "value": "6+",
+      "label": {
+        "ar": "مشاريع منجزة",
+        "en": "Completed Projects"
+      }
+    },
+    {
+      "value": "12+",
+      "label": {
+        "ar": "شهادة ومعسكر",
+        "en": "Certificates"
+      }
+    },
+    {
+      "value": "7+",
+      "label": {
+        "ar": "تجارب قيادية",
+        "en": "Leadership Roles"
+      }
+    }
+  ]
+}

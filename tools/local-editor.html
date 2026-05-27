@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Portfolio JSON Editor</title>
+  <style>
+    body { margin: 0; background: #08111e; color: #dce8f2; font-family: Arial, sans-serif; line-height: 1.6; }
+    main { max-width: 1000px; margin: 0 auto; padding: 28px 18px; }
+    h1 { margin-bottom: 4px; }
+    p { color: #8bb3cc; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: #8bb3cc; }
+    input, textarea, select { border: 1px solid #1d304a; border-radius: 8px; background: #101e30; color: #dce8f2; padding: 9px 10px; }
+    textarea { min-height: 80px; resize: vertical; }
+    button { border: 1px solid #1d304a; border-radius: 8px; background: #162538; color: #dce8f2; padding: 9px 14px; cursor: pointer; }
+    button:hover { border-color: #7aaed4; color: #7aaed4; }
+    section { border: 1px solid #1d304a; border-radius: 12px; padding: 16px; margin-top: 16px; background: #101e30; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
+    .checks label { flex-direction: row; align-items: center; color: #dce8f2; }
+    pre { direction: ltr; text-align: left; white-space: pre-wrap; background: #0c1928; border: 1px solid #1d304a; border-radius: 10px; padding: 14px; overflow: auto; }
+    .note { color: #7aaed4; font-size: 13px; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Local Portfolio JSON Editor</h1>
+    <p>أداة محلية فقط لتوليد كائن JSON أو تحديث ملف JSON تختاره من جهازك. لا يوجد تسجيل دخول ولا Backend.</p>
+
+    <section>
+      <div class="row">
+        <label>Content type
+          <select id="type">
+            <option value="project">Project</option>
+            <option value="certificate">Certificate</option>
+            <option value="achievement">Achievement</option>
+            <option value="leadership">Leadership Item</option>
+            <option value="skill">Skill</option>
+          </select>
+        </label>
+        <button id="loadRefs" type="button">Load reference JSON files</button>
+        <button id="openTarget" type="button">Choose target JSON file</button>
+        <span class="note" id="fileStatus">No file selected</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid" id="form"></div>
+      <div id="relations"></div>
+      <div class="row" style="margin-top:14px">
+        <button id="generate" type="button">Generate JSON</button>
+        <button id="copy" type="button">Copy JSON</button>
+        <button id="download" type="button">Download updated JSON</button>
+        <button id="save" type="button">Append and save selected file</button>
+      </div>
+    </section>
+
+    <section>
+      <pre id="output">{}</pre>
+    </section>
+  </main>
+
+  <script>
+    const refs = { skills: [], projects: [], certificates: [] };
+    let selectedHandle = null;
+    let selectedArray = [];
+
+    const fields = {
+      project: ["id", "icon", "year", "status", "title_ar", "title_en", "subtitle_ar", "subtitle_en", "description_ar", "description_en", "longDescription_ar", "longDescription_en", "roles_ar", "roles_en"],
+      certificate: ["id", "year", "name_ar", "name_en", "issuer_ar", "issuer_en", "url"],
+      achievement: ["id", "year", "title_ar", "title_en", "description_ar", "description_en", "featured"],
+      leadership: ["id", "icon", "year", "title_ar", "title_en", "organization_ar", "organization_en", "description_ar", "description_en"],
+      skill: ["id", "icon", "name_ar", "name_en", "description_ar", "description_en", "items"]
+    };
+
+    function textField(name) {
+      const area = name.includes("description") || name.includes("roles") || name === "items";
+      const input = area ? document.createElement("textarea") : document.createElement("input");
+      input.id = name;
+      input.placeholder = name.includes("roles") || name === "items" ? "comma separated values" : "";
+      const label = document.createElement("label");
+      label.textContent = name;
+      label.appendChild(input);
+      return label;
+    }
+
+    function checkboxGroup(title, list, group) {
+      const wrap = document.createElement("section");
+      wrap.innerHTML = `<p>${title}</p>`;
+      const box = document.createElement("div");
+      box.className = "checks";
+      list.forEach((item) => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" data-group="${group}" value="${item.id}"> ${item.id}`;
+        box.appendChild(label);
+      });
+      wrap.appendChild(box);
+      return wrap;
+    }
+
+    function renderForm() {
+      const type = document.getElementById("type").value;
+      const form = document.getElementById("form");
+      form.innerHTML = "";
+      fields[type].forEach((name) => form.appendChild(textField(name)));
+      const relations = document.getElementById("relations");
+      relations.innerHTML = "";
+      if (["project", "certificate", "achievement", "leadership"].includes(type)) relations.appendChild(checkboxGroup("Related skills", refs.skills, "skills"));
+      if (["certificate", "achievement"].includes(type)) relations.appendChild(checkboxGroup("Related projects", refs.projects, "projects"));
+      if (type === "project") relations.appendChild(checkboxGroup("Related certificates", refs.certificates, "certificates"));
+      generate();
+    }
+
+    function value(id) {
+      return document.getElementById(id)?.value.trim() || "";
+    }
+
+    function csv(id) {
+      return value(id).split(",").map((item) => item.trim()).filter(Boolean);
+    }
+
+    function checked(group) {
+      return [...document.querySelectorAll(`[data-group="${group}"]:checked`)].map((item) => item.value);
+    }
+
+    function generate() {
+      const type = document.getElementById("type").value;
+      let obj;
+      if (type === "project") {
+        obj = { id: value("id"), type: "project", category: "practical", featured: false, icon: value("icon"), year: value("year"), status: value("status"), title: { ar: value("title_ar"), en: value("title_en") }, subtitle: { ar: value("subtitle_ar"), en: value("subtitle_en") }, description: { ar: value("description_ar"), en: value("description_en") }, longDescription: { ar: value("longDescription_ar"), en: value("longDescription_en") }, roles: { ar: csv("roles_ar"), en: csv("roles_en") }, skills: checked("skills"), certificates: checked("certificates"), links: { demo: "", github: "", caseStudy: "" }, badges: [] };
+      } else if (type === "certificate") {
+        obj = { id: value("id"), name: { ar: value("name_ar"), en: value("name_en") }, issuer: { ar: value("issuer_ar"), en: value("issuer_en") }, year: value("year"), skills: checked("skills"), projects: checked("projects"), url: value("url") };
+      } else if (type === "achievement") {
+        obj = { id: value("id"), title: { ar: value("title_ar"), en: value("title_en") }, description: { ar: value("description_ar"), en: value("description_en") }, year: value("year"), relatedProjects: checked("projects"), relatedSkills: checked("skills"), featured: value("featured").toLowerCase() === "true" };
+      } else if (type === "leadership") {
+        obj = { id: value("id"), icon: value("icon"), title: { ar: value("title_ar"), en: value("title_en") }, organization: { ar: value("organization_ar"), en: value("organization_en") }, year: value("year"), description: { ar: value("description_ar"), en: value("description_en") }, skills: checked("skills") };
+      } else {
+        obj = { id: value("id"), icon: value("icon"), name: { ar: value("name_ar"), en: value("name_en") }, description: { ar: value("description_ar"), en: value("description_en") }, items: csv("items") };
+      }
+      document.getElementById("output").textContent = JSON.stringify(obj, null, 2);
+      return obj;
+    }
+
+    function assignRefData(name, data) {
+      if (!Array.isArray(data)) return;
+      if (name.includes("skill") || data.some((item) => item.name && item.items)) refs.skills = data;
+      if (name.includes("project") || data.some((item) => item.longDescription && item.roles)) refs.projects = data;
+      if (name.includes("certificate") || data.some((item) => item.issuer && item.projects)) refs.certificates = data;
+    }
+
+    async function loadRefs() {
+      let loaded = false;
+      for (const key of Object.keys(refs)) {
+        try {
+          refs[key] = await fetch(`../data/${key}.json`).then((res) => res.json());
+          loaded = true;
+        } catch {
+          refs[key] = [];
+        }
+      }
+      if (!loaded && window.showOpenFilePicker) {
+        const handles = await showOpenFilePicker({
+          multiple: true,
+          types: [{ description: "Portfolio JSON", accept: { "application/json": [".json"] } }]
+        });
+        for (const handle of handles) {
+          const file = await handle.getFile();
+          assignRefData(file.name.toLowerCase(), JSON.parse(await file.text()));
+        }
+      } else if (!loaded) {
+        alert("Could not auto-load reference JSON files. Open this tool through a local static server or use a browser with File System Access API.");
+      }
+      renderForm();
+    }
+
+    async function openTarget() {
+      if (!window.showOpenFilePicker) {
+        alert("File System Access API is not available. Use copy or download instead.");
+        return;
+      }
+      [selectedHandle] = await showOpenFilePicker({ types: [{ description: "JSON", accept: { "application/json": [".json"] } }] });
+      const file = await selectedHandle.getFile();
+      selectedArray = JSON.parse(await file.text());
+      document.getElementById("fileStatus").textContent = file.name;
+    }
+
+    function downloadUpdated() {
+      const next = Array.isArray(selectedArray) ? [...selectedArray, generate()] : [generate()];
+      const blob = new Blob([JSON.stringify(next, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${document.getElementById("type").value}s.updated.json`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    async function saveSelected() {
+      if (!selectedHandle) {
+        alert("Choose a target JSON file first.");
+        return;
+      }
+      const next = Array.isArray(selectedArray) ? [...selectedArray, generate()] : [generate()];
+      const writable = await selectedHandle.createWritable();
+      await writable.write(JSON.stringify(next, null, 2));
+      await writable.close();
+      selectedArray = next;
+      alert("Saved.");
+    }
+
+    document.getElementById("type").addEventListener("change", renderForm);
+    document.getElementById("loadRefs").addEventListener("click", loadRefs);
+    document.getElementById("openTarget").addEventListener("click", openTarget);
+    document.getElementById("generate").addEventListener("click", generate);
+    document.getElementById("copy").addEventListener("click", () => navigator.clipboard.writeText(document.getElementById("output").textContent));
+    document.getElementById("download").addEventListener("click", downloadUpdated);
+    document.getElementById("save").addEventListener("click", saveSelected);
+    document.addEventListener("input", generate);
+    renderForm();
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "capm",
+    "name": {
+      "ar": "مساعد مدير مشروع (CAPM-aligned)",
+      "en": "Assistant Project Manager (CAPM-aligned)"
+    },
+    "issuer": {
+      "ar": "برنامج التطوير المهني · KFU",
+      "en": "Student Professional Development · KFU"
+    },
+    "year": "2026",
+    "skills": ["project-management"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "ux-bc",
+    "name": {
+      "ar": "معسكر UI/UX Design",
+      "en": "UI/UX Design Bootcamp"
+    },
+    "issuer": {
+      "ar": "نادي مطوري Google · KFU",
+      "en": "Google Developer Student Club · KFU"
+    },
+    "year": "2023",
+    "skills": ["ux"],
+    "projects": ["alzad", "mihbara"],
+    "url": ""
+  },
+  {
+    "id": "flutter-bc",
+    "name": {
+      "ar": "معسكر Flutter/Dart",
+      "en": "Flutter/Dart Bootcamp"
+    },
+    "issuer": {
+      "ar": "جامعة الملك عبدالعزيز",
+      "en": "King Abdulaziz University"
+    },
+    "year": "2023",
+    "skills": ["flutter"],
+    "projects": ["alzad", "halla"],
+    "url": ""
+  },
+  {
+    "id": "bootstrap",
+    "name": {
+      "ar": "برمجة واجهات الويب بـ Bootstrap",
+      "en": "Web Interfaces - Bootstrap"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2023",
+    "skills": ["web-frontend"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "powerbi",
+    "name": {
+      "ar": "تحليل البيانات بـ Power BI",
+      "en": "Data Analysis with Power BI"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2024",
+    "skills": ["data-analysis"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "sql",
+    "name": {
+      "ar": "مقدمة في SQL",
+      "en": "Introduction to SQL"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2024",
+    "skills": ["systems-analysis", "data-analysis"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "data-bc",
+    "name": {
+      "ar": "معسكر تحليل البيانات",
+      "en": "Data Analysis Bootcamp"
+    },
+    "issuer": {
+      "ar": "نادي علوم الحاسب · جامعة الإمام",
+      "en": "CS Club · Imam Abdulrahman University"
+    },
+    "year": "2024",
+    "skills": ["data-analysis"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "framer",
+    "name": {
+      "ar": "Framer Web Tool",
+      "en": "Framer Web Tool"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2024",
+    "skills": ["ux"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "strategic",
+    "name": {
+      "ar": "التخطيط الاستراتيجي للمنشآت الصغيرة والمتوسطة",
+      "en": "Strategic Planning for SMEs"
+    },
+    "issuer": {
+      "ar": "منشآت",
+      "en": "Monsha'at"
+    },
+    "year": "2023",
+    "skills": ["project-management"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "comm",
+    "name": {
+      "ar": "التواصل بثقة في بيئة العمل",
+      "en": "Communication with Confidence"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2023",
+    "skills": ["leadership"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "creative",
+    "name": {
+      "ar": "التفكير الإبداعي وتقنية الابتكار",
+      "en": "Creative Thinking & Innovation"
+    },
+    "issuer": {
+      "ar": "شهادة معتمدة",
+      "en": "Certified"
+    },
+    "year": "2023",
+    "skills": ["ux"],
+    "projects": [],
+    "url": ""
+  },
+  {
+    "id": "chatgpt",
+    "name": {
+      "ar": "ChatGPT Content Creator",
+      "en": "ChatGPT Content Creator"
+    },
+    "issuer": {
+      "ar": "Simplilearn",
+      "en": "Simplilearn"
+    },
+    "year": "2024",
+    "skills": ["ai"],
+    "projects": [],
+    "url": ""
+  }
+]
