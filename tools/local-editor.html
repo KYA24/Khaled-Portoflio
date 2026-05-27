@@ -54,7 +54,7 @@
         <option value="skill">Skill</option>
       </select>
       <div class="row" style="margin-top:14px">
-        <button id="loadRefs" type="button">Load reference JSON files</button>
+        <button id="loadRefs" type="button">تحديث الخيارات</button>
         <button id="openTarget" type="button">Choose target JSON file</button>
         <span class="note" id="fileStatus">No file selected</span>
       </div>
@@ -280,7 +280,7 @@
       if (name.includes("certificate") || data.some((item) => item.issuer && item.projects)) refs.certificates = data;
     }
 
-    async function loadRefs() {
+    async function loadRefs(interactive = true) {
       let loaded = false;
       for (const key of Object.keys(refs)) {
         try {
@@ -290,7 +290,7 @@
           refs[key] = [];
         }
       }
-      if (!loaded && window.showOpenFilePicker) {
+      if (!loaded && interactive && window.showOpenFilePicker) {
         const handles = await showOpenFilePicker({
           multiple: true,
           types: [{ description: "Portfolio JSON", accept: { "application/json": [".json"] } }]
@@ -299,7 +299,7 @@
           const file = await handle.getFile();
           assignRefData(file.name.toLowerCase(), JSON.parse(await file.text()));
         }
-      } else if (!loaded) {
+      } else if (!loaded && interactive) {
         alert("Could not auto-load reference JSON files. Open this tool through a local static server or use a browser with File System Access API.");
       }
       renderForm();
@@ -340,7 +340,7 @@
     }
 
     document.getElementById("type").addEventListener("change", renderForm);
-    document.getElementById("loadRefs").addEventListener("click", loadRefs);
+    document.getElementById("loadRefs").addEventListener("click", () => loadRefs(true));
     document.getElementById("openTarget").addEventListener("click", openTarget);
     document.getElementById("generate").addEventListener("click", generate);
     document.getElementById("copy").addEventListener("click", () => navigator.clipboard.writeText(document.getElementById("output").textContent));
@@ -348,6 +348,7 @@
     document.getElementById("save").addEventListener("click", saveSelected);
     document.addEventListener("input", generate);
     renderForm();
+    loadRefs(false);
   </script>
 </body>
 </html>
