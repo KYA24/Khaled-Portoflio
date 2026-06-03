@@ -2,6 +2,7 @@ applyPrefs();
 
 document.addEventListener("DOMContentLoaded", () => {
   applyPrefs();
+  setupImageViewer();
 });
 
 function renderShell(activePage = "") {
@@ -45,8 +46,8 @@ function renderShell(activePage = "") {
           <a class="ft-l" href="skills.html" data-i18n-ar="المهارات" data-i18n-en="Skills">${pageTitle("المهارات", "Skills")}</a>
           <a class="ft-l" href="leadership.html" data-i18n-ar="القيادة" data-i18n-en="Leadership">${pageTitle("القيادة", "Leadership")}</a>
         </div>
-      </div>
-      <div class="ftb"><div class="ftc">Static deploy · No backend · No CMS</div></div>`;
+      </div>`;
   }
   applyPrefs();
+  setupImageViewer();
 }

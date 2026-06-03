@@ -9,23 +9,11 @@ function renderCertificateList(certificates, skills, projects) {
     ? `<span class="badge">${escapeHTML(t(certificate.kind))}</span>`
     : "";
 
-  const actionLinks = (certificate) => {
-    const primary = certificate.file || certificate.url || certificate.image;
-    const actions = [];
-    if (primary) {
-      actions.push(`<a class="lnk" href="${escapeHTML(primary)}" target="_blank" rel="noreferrer">${pageTitle("فتح الأصل", "Open file")}</a>`);
-    }
-    if (certificate.image && certificate.file && certificate.image !== certificate.file) {
-      actions.push(`<a class="lnk" href="${escapeHTML(certificate.image)}" target="_blank" rel="noreferrer">${pageTitle("عرض الصورة", "View image")}</a>`);
-    }
-    return actions.join("");
-  };
-
   const card = (certificate) => {
     const relatedSkills = resolveSkills(certificate.skills, skills);
     const relatedProjects = resolveProjects(certificate.projects, projects);
     return `<article class="cf" id="${escapeHTML(certificate.id)}">
-      ${certificate.image ? `<div class="cf-media"><img class="cf-img" src="${escapeHTML(certificate.image)}" alt="${escapeHTML(t(certificate.imageAlt || certificate.name))}" loading="lazy" onerror="this.closest('.cf-media').remove()"></div>` : ""}
+      ${certificate.image ? `<div class="cf-media"><img class="cf-img" src="${escapeHTML(certificate.image)}" alt="${escapeHTML(t(certificate.imageAlt || certificate.name))}" loading="lazy" data-full-image onerror="this.closest('.cf-media').remove()"></div>` : ""}
       <div class="cf-h">
         <div>
           <div class="cf-n">${escapeHTML(t(certificate.name))}</div>
@@ -39,7 +27,6 @@ function renderCertificateList(certificates, skills, projects) {
       ${certificate.summary ? `<div class="cf-summary">${escapeHTML(t(certificate.summary))}</div>` : ""}
       ${relatedSkills.length ? `<div class="chips">${relatedSkills.map(skillChip).join("")}</div>` : ""}
       ${relatedProjects.length ? `<div class="chips">${relatedProjects.map(projectChip).join("")}</div>` : ""}
-      ${actionLinks(certificate) ? `<div class="cf-actions">${actionLinks(certificate)}</div>` : ""}
     </article>`;
   };
 
@@ -60,8 +47,16 @@ async function renderCertificatesPage() {
       ["proofs", "أدلة الإنجاز", "Achievement Proofs"]
     ];
 
+    const counts = {
+      all: certificates.length,
+      specialized: certificates.filter((certificate) => certificate.category === "specialized").length,
+      professional: certificates.filter((certificate) => certificate.category === "professional").length,
+      participation: certificates.filter((certificate) => certificate.category === "participation").length,
+      proofs: certificates.filter((certificate) => certificate.category === "proofs").length
+    };
+
     document.querySelector("[data-certificate-filters]").innerHTML = filters.map(([key, ar, en]) => `
-      <button class="filter-btn ${currentCertificateFilter === key ? "active" : ""}" data-certificate-filter="${key}" type="button">${pageTitle(ar, en)}</button>`).join("");
+      <button class="filter-btn ${currentCertificateFilter === key ? "active" : ""}" data-certificate-filter="${key}" type="button">${pageTitle(ar, en)} <span class="filter-total">${counts[key] || 0}</span></button>`).join("");
 
     document.querySelectorAll("[data-certificate-filter]").forEach((button) => {
       button.addEventListener("click", () => {

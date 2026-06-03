@@ -17,7 +17,6 @@
 
 - `google-ux-bootcamp`
 - `flutter-dart-bootcamp-kau`
-- `sql-bootcamp`
 - `powerbi-data-analysis`
 - `chatgpt-content-creator`
 - `google-ux-course`
@@ -49,7 +48,6 @@
 - `consulting-championship-2025`
 - `internal-audit-forum-speaker`
 - `pti-active-member`
-- `pti-leader`
 - `bokra-program`
 - `cybersecurity-awareness-expo-2025`
 - `kfu-nights-participation`
@@ -70,6 +68,4 @@
 
 - `التخطيط الاستراتيجي للمنظمات الصغيرة والمتوسطة لنكد ان.PNG`
   استخدمت كصورة معاينة للبطاقة `strategic-planning-smes` بينما الملف الأصلي هو PDF.
-- `علم البيانات.png`
-  لم يتم إنشاء بطاقة مستقلة له لأنه يبدو نسخة/إعادة تسمية من `دورة مقدمة في علم البيانات.png`.
 - ملفات PDF المستخدمة داخل صفحة الشهادات تم توليد معاينة JPG للصفحة الأولى لها داخل `assets/images/certificates/`.

@@ -9,7 +9,7 @@ async function renderSkillDetail() {
       root.innerHTML = `<div class="dcard"><h1 class="d-ttl">${pageTitle("المهارة غير موجودة", "Skill not found")}</h1><p class="d-desc">${pageTitle("تأكد من رابط المهارة أو ارجع إلى قائمة المهارات.", "Check the skill link or go back to the skills list.")}</p><div class="sec-footer"><a class="btn" href="skills.html">${pageTitle("العودة للمهارات", "Back to skills")}</a></div></div>`;
       return;
     }
-    const relatedProjects = projects.filter((project) => (project.skills || []).includes(skill.id));
+    const relatedProjects = sortProjectsForDisplay(projects.filter((project) => (project.skills || []).includes(skill.id)));
     const relatedCertificates = certificates.filter((certificate) => (certificate.skills || []).includes(skill.id));
     const relatedAchievements = achievements.filter((achievement) => (achievement.relatedSkills || []).includes(skill.id));
     root.innerHTML = `

@@ -52,6 +52,10 @@ body {
   line-height: 1.75;
 }
 
+body.viewer-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -237,6 +241,19 @@ nav {
   background: var(--accent-dim);
 }
 
+.filter-total {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  margin-inline-start: .35rem;
+  padding-inline: .35rem;
+  border-radius: 999px;
+  background: rgba(122, 174, 212, .12);
+  color: inherit;
+  font: 11px "IBM Plex Mono", monospace;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -355,6 +372,12 @@ nav {
   border-radius: 8px;
 }
 
+.project-img,
+.achievement-img,
+.cf-img {
+  cursor: zoom-in;
+}
+
 .pcard-top,
 .skcard-head,
 .cf-h {
@@ -444,6 +467,29 @@ nav {
 .project-detail-media,
 .leadership-media {
   margin-bottom: 1.1rem;
+}
+
+.leadership-body {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.leadership-copy {
+  min-width: 0;
+}
+
+.leadership-thumb {
+  width: 110px;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 0;
+  padding: .4rem;
+  justify-self: start;
+}
+
+.leadership-thumb .achievement-img {
+  border-radius: 6px;
 }
 
 .achievement-img {
@@ -583,6 +629,93 @@ nav {
 
 .cf-actions {
   margin-top: .2rem;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+}
+
+.image-viewer.open {
+  display: block;
+}
+
+.image-viewer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 10, 18, .82);
+  backdrop-filter: blur(8px);
+}
+
+.image-viewer-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100vw - 1.5rem), 1240px);
+  height: min(calc(100dvh - 1.5rem), 920px);
+  margin: .75rem auto;
+  padding: clamp(.6rem, 2vw, 1rem);
+  display: grid;
+  place-items: center;
+}
+
+.image-viewer-img {
+  max-width: 100%;
+  max-height: calc(100dvh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+  background: rgba(255, 255, 255, .02);
+}
+
+.image-viewer-close {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(8, 17, 30, .82);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .image-viewer-dialog {
+    width: calc(100vw - 1rem);
+    height: calc(100dvh - 1rem);
+    margin: .5rem auto;
+    padding: .5rem;
+  }
+
+  .image-viewer-img {
+    max-height: calc(100dvh - 2.25rem);
+    border-radius: 10px;
+  }
+
+  .image-viewer-close {
+    top: .75rem;
+    inset-inline-end: .75rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+
+  .leadership-body {
+    grid-template-columns: 1fr 88px;
+    gap: .8rem;
+  }
+
+  .leadership-thumb {
+    width: 88px;
+  }
 }
 
 .back {

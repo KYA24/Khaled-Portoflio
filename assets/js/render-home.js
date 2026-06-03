@@ -25,7 +25,7 @@ async function renderHome() {
     document.querySelector("[data-home-updates]").innerHTML = latestUpdates.length
       ? latestUpdates.map((item) => `
         <div class="achievement-card update-card">
-          ${achievementImage(item).src ? `<div class="achievement-media"><img class="achievement-img" src="${escapeHTML(achievementImage(item).src)}" alt="${escapeHTML(t(achievementImage(item).alt))}" loading="lazy" onerror="this.closest('.achievement-media').remove()"></div>` : ""}
+          ${achievementImage(item).src ? `<div class="achievement-media"><img class="achievement-img" src="${escapeHTML(achievementImage(item).src)}" alt="${escapeHTML(t(achievementImage(item).alt))}" loading="lazy" data-full-image onerror="this.closest('.achievement-media').remove()"></div>` : ""}
           <div class="pcard-top">
             <div><div class="pt">${escapeHTML(t(item.title))}</div><div class="ps">${escapeHTML(item.updatedAt || item.year || "")}</div></div>
             <span class="badge badge-featured">${pageTitle("جديد", "New")}</span>
@@ -38,7 +38,7 @@ async function renderHome() {
         </div>`).join("")
       : `<div class="empty">${pageTitle("لا توجد تحديثات حديثة بعد.", "No recent updates yet.")}</div>`;
 
-    document.querySelector("[data-featured-projects]").innerHTML = projects.filter((project) => project.featured).slice(0, 3).map((project) => projectCard(project, skills)).join("");
+    document.querySelector("[data-featured-projects]").innerHTML = sortProjectsForDisplay(projects.filter((project) => project.featured)).slice(0, 3).map((project) => projectCard(project, skills)).join("");
 
     const homeSkills = skills.flatMap((skill) => skill.items || []).slice(0, 18);
     document.querySelector("[data-home-skills]").innerHTML = homeSkills.map((item) => `<span class="hsc"><span class="hsc-dot"></span>${escapeHTML(item)}</span>`).join("");
@@ -47,7 +47,7 @@ async function renderHome() {
       <div class="cc-row"><div><div class="cc-name">${escapeHTML(t(certificate.name))}</div><div class="cc-org">${escapeHTML(t(certificate.issuer))}</div></div><div class="cc-yr">${escapeHTML(certificate.year)}</div></div>`).join("");
 
     document.querySelector("[data-home-achievements]").innerHTML = achievements.filter((item) => item.featured).slice(0, 3).map((item) => `
-      <div class="achievement-card">${achievementImage(item).src ? `<div class="achievement-media"><img class="achievement-img" src="${escapeHTML(achievementImage(item).src)}" alt="${escapeHTML(t(achievementImage(item).alt))}" loading="lazy" onerror="this.closest('.achievement-media').remove()"></div>` : ""}<div class="pt">${escapeHTML(t(item.title))}</div><div class="pd">${escapeHTML(t(item.description))}</div><div class="tags"><span class="badge badge-featured">${escapeHTML(item.year)}</span></div></div>`).join("");
+      <div class="achievement-card">${achievementImage(item).src ? `<div class="achievement-media"><img class="achievement-img" src="${escapeHTML(achievementImage(item).src)}" alt="${escapeHTML(t(achievementImage(item).alt))}" loading="lazy" data-full-image onerror="this.closest('.achievement-media').remove()"></div>` : ""}<div class="pt">${escapeHTML(t(item.title))}</div><div class="pd">${escapeHTML(t(item.description))}</div><div class="tags"><span class="badge badge-featured">${escapeHTML(item.year)}</span></div></div>`).join("");
 
     document.querySelector("[data-home-leadership]").innerHTML = leadership.slice(0, 4).map((item) => `
       <div class="tlc"><div class="tlc-ico">${item.icon || "•"}</div><div><div class="tlc-t">${escapeHTML(t(item.title))}</div><div class="tlc-o">${escapeHTML(t(item.organization))}</div></div></div>`).join("");

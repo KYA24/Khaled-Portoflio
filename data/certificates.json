@@ -62,32 +62,6 @@
     "url": ""
   },
   {
-    "id": "sql-bootcamp",
-    "category": "specialized",
-    "kind": {
-      "ar": "معسكر",
-      "en": "Bootcamp"
-    },
-    "featured": true,
-    "name": {
-      "ar": "معسكر SQL",
-      "en": "SQL Bootcamp"
-    },
-    "issuer": {
-      "ar": "جهة تدريبية معتمدة",
-      "en": "Certified Training Provider"
-    },
-    "year": "2025",
-    "summary": {
-      "ar": "تأسيس عملي في كتابة الاستعلامات وربطها بتحليل الأنظمة والبيانات.",
-      "en": "Practical grounding in SQL queries for systems and data work."
-    },
-    "skills": ["systems-analysis", "data-analysis"],
-    "projects": ["alzad", "aitask"],
-    "file": "assets/files/certificates/sql-bootcamp.pdf",
-    "url": ""
-  },
-  {
     "id": "powerbi-data-analysis",
     "category": "specialized",
     "kind": {
@@ -860,37 +834,6 @@
       "en": "Preview of the PTI active member certificate"
     },
     "file": "assets/files/certificates/pti-active-member.pdf",
-    "url": ""
-  },
-  {
-    "id": "pti-leader",
-    "category": "participation",
-    "kind": {
-      "ar": "دور قيادي",
-      "en": "Leadership Role"
-    },
-    "featured": false,
-    "name": {
-      "ar": "إثبات دور قيادي في PTI",
-      "en": "Leadership Proof in PTI"
-    },
-    "issuer": {
-      "ar": "Peer Tutoring Initiative Club",
-      "en": "Peer Tutoring Initiative Club"
-    },
-    "year": "2024",
-    "summary": {
-      "ar": "صورة داعمة لدور قيادي داخل النادي.",
-      "en": "Supporting image for a leadership role inside the club."
-    },
-    "skills": ["leadership", "project-management"],
-    "projects": [],
-    "image": "assets/images/certificates/pti-leader.jpg",
-    "imageAlt": {
-      "ar": "إثبات الدور القيادي في PTI",
-      "en": "Proof of the PTI leadership role"
-    },
-    "file": "assets/images/certificates/pti-leader.jpg",
     "url": ""
   },
   {

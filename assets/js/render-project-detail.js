@@ -10,12 +10,12 @@ async function renderProjectDetail() {
       return;
     }
     const relatedSkills = resolveSkills(project.skills, skills);
-    const relatedCertificates = (project.certificates || []).map((certId) => findById(certificates, certId)).filter(Boolean);
+    const relatedCertificates = certificates.filter((certificate) => (certificate.projects || []).includes(project.id));
     const relatedAchievements = achievements.filter((achievement) => (achievement.relatedProjects || []).includes(project.id));
     root.innerHTML = `
       <a class="back" href="projects.html">← ${pageTitle("المشاريع", "Projects")}</a>
       <div class="dcard">
-        ${project.image ? `<div class="project-media project-detail-media"><img class="project-img" src="${escapeHTML(project.image)}" alt="${escapeHTML(t(project.imageAlt || project.title))}" loading="lazy" onerror="this.closest('.project-media').remove()"></div>` : ""}
+        ${project.image ? `<div class="project-media project-detail-media"><img class="project-img" src="${escapeHTML(project.image)}" alt="${escapeHTML(t(project.imageAlt || project.title))}" loading="lazy" data-full-image onerror="this.closest('.project-media').remove()"></div>` : ""}
         <div class="d-ico">${project.icon || "•"}</div>
         <h1 class="d-ttl">${escapeHTML(t(project.title))}</h1>
         <div class="d-meta">${escapeHTML(t(project.subtitle))}</div>
