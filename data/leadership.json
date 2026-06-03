@@ -15,6 +15,11 @@
       "ar": "قاد النادي، نظم اليوم العالمي للبرمجة، ورشة Notion لـ50+ طالب، وبنى نظام Notion للأندية.",
       "en": "Led club, organized World Programming Day, delivered Notion workshop for 50+ students, built club ops system."
     },
+    "image": "assets/images/leadership/futech-award.jpg",
+    "imageAlt": {
+      "ar": "درع تكريم مرتبط بقيادة نادي Futech",
+      "en": "Recognition award tied to Futech club leadership"
+    },
     "skills": ["leadership", "project-management", "automation"]
   },
   {

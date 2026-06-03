@@ -19,6 +19,11 @@
       "ar": "تطبيق متعدد المنصات لعدة فئات مستخدمين.",
       "en": "Cross-platform app for multiple user types."
     },
+    "image": "assets/images/projects/alzad.jpg",
+    "imageAlt": {
+      "ar": "صورة فريق الزاد أثناء عرض مشروع التخرج",
+      "en": "Al-Zad team during the graduation project presentation"
+    },
     "longDescription": {
       "ar": "مشروع تخرج متكامل على iOS وAndroid مع خلفية Laravel وذكاء اصطناعي. أجريت دراسة جدوى كاملة، حللت الأنظمة، صممت بـ Figma، وطورت بـ Flutter.",
       "en": "Full graduation project on iOS and Android with Laravel backend and AI integration. Conducted feasibility study, systems analysis, designed with Figma, and built with Flutter."
@@ -55,6 +60,11 @@
     "description": {
       "ar": "خدمات سياحية للأحساء. فاز باحتضان CodeLab · Huawei.",
       "en": "Tourism services app for Al-Ahsa. Won CodeLab incubation."
+    },
+    "image": "assets/images/achievements/halla-booth.jpg",
+    "imageAlt": {
+      "ar": "لوحة مشروع حلة داخل مساحة العرض ضمن احتضان CodeLab",
+      "en": "Halla project sign displayed in the CodeLab workspace"
     },
     "longDescription": {
       "ar": "مشروع ريادي سياحي. صممت الواجهات وطورت التطبيق وأدرت المشروع. شارك في هاكاثونات وبرنامج منشآت 8 أسابيع.",
@@ -100,6 +110,11 @@
     "description": {
       "ar": "منصة AI لصناعة المحتوى العربي. المركز الثالث في هاكاثون اللغة العربي من وزارة الثقافة.",
       "en": "AI Arabic content platform. 1st place, only winner from KFU."
+    },
+    "image": "assets/images/achievements/mihbara-local.jpg",
+    "imageAlt": {
+      "ar": "شهادة فوز محبرة في هاكاثون اللغة العربية",
+      "en": "Mihbara local Arabic hackathon award certificate"
     },
     "longDescription": {
       "ar": "منصة ذكاء اصطناعي للكتاب العرب. قدت الفريق في 36 ساعة للفوز بالمركز الثالث في هاكاثون وزارة الثقافة.",

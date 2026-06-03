@@ -15,6 +15,7 @@ async function renderProjectDetail() {
     root.innerHTML = `
       <a class="back" href="projects.html">← ${pageTitle("المشاريع", "Projects")}</a>
       <div class="dcard">
+        ${project.image ? `<div class="project-media project-detail-media"><img class="project-img" src="${escapeHTML(project.image)}" alt="${escapeHTML(t(project.imageAlt || project.title))}" loading="lazy" onerror="this.closest('.project-media').remove()"></div>` : ""}
         <div class="d-ico">${project.icon || "•"}</div>
         <h1 class="d-ttl">${escapeHTML(t(project.title))}</h1>
         <div class="d-meta">${escapeHTML(t(project.subtitle))}</div>

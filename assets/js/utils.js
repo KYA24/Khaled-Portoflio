@@ -83,6 +83,7 @@ function badgeHTML(badge) {
 function projectCard(project, skills) {
   const relatedSkills = resolveSkills(project.skills, skills).slice(0, 4);
   return `<a class="pcard" href="project.html?id=${encodeURIComponent(project.id)}">
+    ${project.image ? `<div class="project-media"><img class="project-img" src="${escapeHTML(project.image)}" alt="${escapeHTML(t(project.imageAlt || project.title))}" loading="lazy" onerror="this.closest('.project-media').remove()"></div>` : ""}
     <div class="pcard-top"><div class="pcard-ico">${project.icon || "•"}</div><span class="parr">→</span></div>
     <div><div class="pt">${escapeHTML(t(project.title))}</div><div class="ps">${escapeHTML(t(project.subtitle))}</div></div>
     <div class="pd">${escapeHTML(t(project.description))}</div>

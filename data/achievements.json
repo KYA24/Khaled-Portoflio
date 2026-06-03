@@ -32,11 +32,6 @@
       "en": "Halla won CodeLab · Huawei incubation as a technology startup project."
     },
     "year": "2025",
-    "image": "assets/images/achievements/halla-booth.jpg",
-    "imageAlt": {
-      "ar": "فريق حلة في جناح العرض",
-      "en": "Halla team at the booth"
-    },
     "relatedProjects": ["halla"],
     "relatedSkills": ["flutter", "ux", "project-management"],
     "featured": true
@@ -54,14 +49,29 @@
     "year": "2024",
     "updatedAt": "2026-05-27",
     "url": "https://www.linkedin.com/posts/khaled-alateeq_%D8%A8%D9%83%D9%84-%D9%81%D8%AE%D8%B1-%D9%88%D8%A7%D8%B9%D8%AA%D8%B2%D8%A7%D8%B2-%D8%A7%D8%B4%D8%A7%D8%B1%D9%83-%D9%84%D9%83%D9%85-%D9%81%D9%88%D8%B2%D9%8A-%D9%85%D8%B9-%D9%81%D8%B1%D9%8A%D9%82%D9%8A-activity-7244570811418787841-wOfB",
-    "image": "assets/images/achievements/mihbara-local.jpg",
-    "imageAlt": {
-      "ar": "شهادة فوز محبرة في هاكاثون اللغة العربية",
-      "en": "Mihbara local Arabic hackathon award certificate"
-    },
     "relatedProjects": ["mihbara"],
     "relatedSkills": ["ux", "ai", "leadership"],
     "featured": true
+  },
+  {
+    "id": "futech-leadership-award",
+    "title": {
+      "ar": "تكريم قيادي مرتبط بنادي Futech",
+      "en": "Leadership Recognition Related to Futech"
+    },
+    "description": {
+      "ar": "إثبات بصري لتكريم قيادي مرتبط بإنجازات نادي Futech خلال العام الجامعي 2026.",
+      "en": "Visual proof of leadership recognition related to Futech club achievements during the 2026 academic year."
+    },
+    "year": "2026",
+    "image": "assets/images/leadership/futech-award.jpg",
+    "imageAlt": {
+      "ar": "درع تكريم قيادي لنادي Futech",
+      "en": "Leadership recognition award for Futech club"
+    },
+    "relatedProjects": [],
+    "relatedSkills": ["leadership", "project-management"],
+    "featured": false
   },
   {
     "id": "alzad-graduation",

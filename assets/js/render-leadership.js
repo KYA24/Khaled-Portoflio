@@ -7,6 +7,7 @@ async function renderLeadershipPage() {
       return `<div class="tli">
         <div class="tly">${escapeHTML(item.year)}</div>
         <div>
+          ${item.image ? `<div class="achievement-media leadership-media"><img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt || item.title))}" loading="lazy" onerror="this.closest('.achievement-media').remove()"></div>` : ""}
           <div class="tlt">${item.icon || ""} ${escapeHTML(t(item.title))}</div>
           <div class="tlo">${escapeHTML(t(item.organization))}</div>
           <div class="tld">${escapeHTML(t(item.description))}</div>
