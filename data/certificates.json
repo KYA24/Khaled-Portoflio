@@ -1,171 +1,105 @@
 [
   {
-    "id": "capm",
+    "id": "google-ux-bootcamp",
+    "category": "specialized",
+    "kind": {
+      "ar": "معسكر",
+      "en": "Bootcamp"
+    },
+    "featured": true,
     "name": {
-      "ar": "مساعد مدير مشروع (CAPM-aligned)",
-      "en": "Assistant Project Manager (CAPM-aligned)"
+      "ar": "معسكر UX/UI Design",
+      "en": "UX/UI Design Bootcamp"
     },
     "issuer": {
-      "ar": "برنامج التطوير المهني · KFU",
-      "en": "Student Professional Development · KFU"
-    },
-    "year": "2026",
-    "skills": ["project-management"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "ux-bc",
-    "name": {
-      "ar": "معسكر UI/UX Design",
-      "en": "UI/UX Design Bootcamp"
-    },
-    "issuer": {
-      "ar": "نادي مطوري Google · KFU",
-      "en": "Google Developer Student Club · KFU"
+      "ar": "Google Developers Group · KFU",
+      "en": "Google Developers Group · KFU"
     },
     "year": "2023",
+    "summary": {
+      "ar": "أساس قوي في تجربة المستخدم، بناء الرحلات، واختبار النماذج الأولية.",
+      "en": "Strong foundation in user experience, user journeys, and prototype testing."
+    },
     "skills": ["ux"],
-    "projects": ["alzad", "mihbara"],
+    "projects": ["alzad", "mihbara", "halla"],
+    "image": "assets/images/certificates/google-ux-bootcamp.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة معسكر UX/UI Design",
+      "en": "Preview of the UX/UI Design Bootcamp certificate"
+    },
+    "file": "assets/files/certificates/google-ux-bootcamp.pdf",
     "url": ""
   },
   {
-    "id": "flutter-bc",
+    "id": "flutter-dart-bootcamp-kau",
+    "category": "specialized",
+    "kind": {
+      "ar": "معسكر",
+      "en": "Bootcamp"
+    },
+    "featured": true,
     "name": {
-      "ar": "معسكر Flutter/Dart",
-      "en": "Flutter/Dart Bootcamp"
+      "ar": "معسكر Flutter & Dart",
+      "en": "Flutter & Dart Bootcamp"
     },
     "issuer": {
       "ar": "جامعة الملك عبدالعزيز",
       "en": "King Abdulaziz University"
     },
-    "year": "2023",
+    "year": "2025",
+    "summary": {
+      "ar": "تطوير تطبيقات متعددة المنصات باستخدام Flutter وDart.",
+      "en": "Cross-platform app development using Flutter and Dart."
+    },
     "skills": ["flutter"],
     "projects": ["alzad", "halla"],
+    "image": "assets/images/certificates/flutter-dart-bootcamp-kau.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة معسكر Flutter & Dart",
+      "en": "Preview of the Flutter & Dart bootcamp certificate"
+    },
+    "file": "assets/images/certificates/flutter-dart-bootcamp-kau.png",
     "url": ""
   },
   {
-    "id": "bootstrap",
-    "name": {
-      "ar": "برمجة واجهات الويب بـ Bootstrap",
-      "en": "Web Interfaces - Bootstrap"
+    "id": "powerbi-data-analysis",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
     },
-    "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
-    },
-    "year": "2023",
-    "skills": ["web-frontend"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "powerbi",
+    "featured": true,
     "name": {
-      "ar": "تحليل البيانات بـ Power BI",
+      "ar": "تحليل البيانات باستخدام Power BI",
       "en": "Data Analysis with Power BI"
     },
     "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
     },
-    "year": "2024",
+    "year": "2025",
+    "summary": {
+      "ar": "بناء لوحات معلومات وقراءة البيانات بصريًا لاتخاذ القرار.",
+      "en": "Dashboard building and visual data reading for decision-making."
+    },
     "skills": ["data-analysis"],
     "projects": [],
+    "image": "assets/images/certificates/powerbi-data-analysis.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة تحليل البيانات باستخدام Power BI",
+      "en": "Preview of the Data Analysis with Power BI certificate"
+    },
+    "file": "assets/files/certificates/powerbi-data-analysis.pdf",
     "url": ""
   },
   {
-    "id": "sql",
-    "name": {
-      "ar": "مقدمة في SQL",
-      "en": "Introduction to SQL"
+    "id": "chatgpt-content-creator",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
     },
-    "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
-    },
-    "year": "2024",
-    "skills": ["systems-analysis", "data-analysis"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "data-bc",
-    "name": {
-      "ar": "معسكر تحليل البيانات",
-      "en": "Data Analysis Bootcamp"
-    },
-    "issuer": {
-      "ar": "نادي علوم الحاسب · جامعة الإمام",
-      "en": "CS Club · Imam Abdulrahman University"
-    },
-    "year": "2024",
-    "skills": ["data-analysis"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "framer",
-    "name": {
-      "ar": "Framer Web Tool",
-      "en": "Framer Web Tool"
-    },
-    "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
-    },
-    "year": "2024",
-    "skills": ["ux"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "strategic",
-    "name": {
-      "ar": "التخطيط الاستراتيجي للمنشآت الصغيرة والمتوسطة",
-      "en": "Strategic Planning for SMEs"
-    },
-    "issuer": {
-      "ar": "منشآت",
-      "en": "Monsha'at"
-    },
-    "year": "2023",
-    "skills": ["project-management"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "comm",
-    "name": {
-      "ar": "التواصل بثقة في بيئة العمل",
-      "en": "Communication with Confidence"
-    },
-    "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
-    },
-    "year": "2023",
-    "skills": ["leadership"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "creative",
-    "name": {
-      "ar": "التفكير الإبداعي وتقنية الابتكار",
-      "en": "Creative Thinking & Innovation"
-    },
-    "issuer": {
-      "ar": "شهادة معتمدة",
-      "en": "Certified"
-    },
-    "year": "2023",
-    "skills": ["ux"],
-    "projects": [],
-    "url": ""
-  },
-  {
-    "id": "chatgpt",
+    "featured": true,
     "name": {
       "ar": "ChatGPT Content Creator",
       "en": "ChatGPT Content Creator"
@@ -174,9 +108,980 @@
       "ar": "Simplilearn",
       "en": "Simplilearn"
     },
-    "year": "2024",
+    "year": "2025",
+    "summary": {
+      "ar": "استخدام ChatGPT في صياغة المحتوى وسير العمل المدعوم بالذكاء الاصطناعي.",
+      "en": "Using ChatGPT for content creation and AI-assisted workflows."
+    },
     "skills": ["ai"],
+    "projects": ["shahidati", "aitask"],
+    "image": "assets/images/certificates/chatgpt-content-creator.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة ChatGPT Content Creator",
+      "en": "Preview of the ChatGPT Content Creator certificate"
+    },
+    "file": "assets/images/certificates/chatgpt-content-creator.png",
+    "url": ""
+  },
+  {
+    "id": "google-ux-course",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة دورة Google UX/UI",
+      "en": "Google UX/UI Course Certificate"
+    },
+    "issuer": {
+      "ar": "Google",
+      "en": "Google"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "تركيز على مبادئ واجهات الاستخدام وتجربة المستخدم.",
+      "en": "Focused on UI principles and user experience fundamentals."
+    },
+    "skills": ["ux"],
+    "projects": ["alzad", "mihbara", "halla"],
+    "image": "assets/images/certificates/google-ux-course.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة دورة Google UX/UI",
+      "en": "Preview of the Google UX/UI course certificate"
+    },
+    "file": "assets/files/certificates/google-ux-course.pdf",
+    "url": ""
+  },
+  {
+    "id": "ux-mindset-practice",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "فكر مثل مصمم تجربة المستخدم",
+      "en": "Think Like a UX Designer"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "منهجية التفكير العقلي والعملي لمصمم تجربة المستخدم.",
+      "en": "Mental and practical framework for UX design thinking."
+    },
+    "skills": ["ux"],
+    "projects": ["alzad", "mihbara", "halla"],
+    "image": "assets/images/certificates/ux-mindset-practice.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة فكر مثل مصمم تجربة المستخدم",
+      "en": "Preview of the Think Like a UX Designer certificate"
+    },
+    "file": "assets/files/certificates/ux-mindset-practice.pdf",
+    "url": ""
+  },
+  {
+    "id": "framer-tool",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "أداة Framer",
+      "en": "Framer Tool"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "استخدام Framer في النمذجة السريعة وعرض الواجهات.",
+      "en": "Using Framer for rapid prototyping and interface presentation."
+    },
+    "skills": ["ux"],
+    "projects": ["alzad", "halla"],
+    "image": "assets/images/certificates/framer-tool.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة أداة Framer",
+      "en": "Preview of the Framer Tool certificate"
+    },
+    "file": "assets/files/certificates/framer-tool.pdf",
+    "url": ""
+  },
+  {
+    "id": "bootstrap-web-interfaces",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "برمجة واجهات الويب باستخدام Bootstrap",
+      "en": "Programming Web Interfaces with Bootstrap"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "تصميم واجهات ويب سريعة ومنظمة باستخدام Bootstrap.",
+      "en": "Building fast, structured web interfaces with Bootstrap."
+    },
+    "skills": ["web-frontend", "ux"],
+    "projects": ["barbershop"],
+    "image": "assets/images/certificates/bootstrap-web-interfaces.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة Bootstrap",
+      "en": "Preview of the Bootstrap certificate"
+    },
+    "file": "assets/files/certificates/bootstrap-web-interfaces.pdf",
+    "url": ""
+  },
+  {
+    "id": "flutter-certificate-1",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة Flutter",
+      "en": "Flutter Certificate"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "إثبات مبكر لمهارات Flutter قبل المشاريع الأكبر.",
+      "en": "Early proof of Flutter skills before larger product work."
+    },
+    "skills": ["flutter"],
+    "projects": ["halla", "alzad"],
+    "image": "assets/images/certificates/flutter-certificate-1.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة Flutter",
+      "en": "Preview of the Flutter certificate"
+    },
+    "file": "assets/files/certificates/flutter-certificate-1.pdf",
+    "url": ""
+  },
+  {
+    "id": "intro-sql",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "مقدمة في SQL",
+      "en": "Introduction to SQL"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية معتمدة",
+      "en": "Certified Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "أساسيات قواعد البيانات والاستعلامات.",
+      "en": "Fundamentals of databases and querying."
+    },
+    "skills": ["systems-analysis", "data-analysis"],
+    "projects": ["alzad", "aitask"],
+    "image": "assets/images/certificates/intro-sql.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة مقدمة في SQL",
+      "en": "Preview of the Introduction to SQL certificate"
+    },
+    "file": "assets/images/certificates/intro-sql.png",
+    "url": ""
+  },
+  {
+    "id": "data-analysis-bootcamp",
+    "category": "specialized",
+    "kind": {
+      "ar": "معسكر",
+      "en": "Bootcamp"
+    },
+    "featured": false,
+    "name": {
+      "ar": "معسكر تحليل البيانات",
+      "en": "Data Analysis Bootcamp"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "تطبيقات عملية في تحليل البيانات والقراءة المؤسسية للأرقام.",
+      "en": "Practical work in data analysis and business interpretation."
+    },
+    "skills": ["data-analysis"],
     "projects": [],
+    "image": "assets/images/certificates/data-analysis-bootcamp.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة معسكر تحليل البيانات",
+      "en": "Preview of the data analysis bootcamp certificate"
+    },
+    "file": "assets/images/certificates/data-analysis-bootcamp.png",
+    "url": ""
+  },
+  {
+    "id": "intro-data-science",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "مقدمة في علم البيانات",
+      "en": "Introduction to Data Science"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "مفاهيم أولية في علم البيانات ومساراته العملية.",
+      "en": "Introductory concepts in data science and practical pathways."
+    },
+    "skills": ["data-analysis"],
+    "projects": [],
+    "image": "assets/images/certificates/intro-data-science.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة مقدمة في علم البيانات",
+      "en": "Preview of the Introduction to Data Science certificate"
+    },
+    "file": "assets/images/certificates/intro-data-science.png",
+    "url": ""
+  },
+  {
+    "id": "mastering-ai-chatgpt",
+    "category": "specialized",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "Mastering AI using ChatGPT",
+      "en": "Mastering AI using ChatGPT"
+    },
+    "issuer": {
+      "ar": "منصة تدريبية",
+      "en": "Training Platform"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "تطبيقات أوسع لاستخدام ChatGPT داخل المنتجات وسير العمل.",
+      "en": "Broader use of ChatGPT inside products and workflows."
+    },
+    "skills": ["ai"],
+    "projects": ["shahidati", "aitask"],
+    "image": "assets/images/certificates/mastering-ai-chatgpt.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة Mastering AI using ChatGPT",
+      "en": "Preview of the Mastering AI using ChatGPT certificate"
+    },
+    "file": "assets/images/certificates/mastering-ai-chatgpt.png",
+    "url": ""
+  },
+  {
+    "id": "capm-certified-assistant",
+    "category": "professional",
+    "kind": {
+      "ar": "اعتماد",
+      "en": "Credential"
+    },
+    "featured": true,
+    "name": {
+      "ar": "مساعد معتمد في إدارة المشاريع CAPM",
+      "en": "Certified Assistant in Project Management (CAPM)"
+    },
+    "issuer": {
+      "ar": "جهة اعتماد مهنية",
+      "en": "Professional Credential Provider"
+    },
+    "year": "2026",
+    "summary": {
+      "ar": "تأكيد مهارات التخطيط والمتابعة وإدارة أصحاب المصلحة.",
+      "en": "Confirms planning, follow-up, and stakeholder management skills."
+    },
+    "skills": ["project-management"],
+    "projects": ["alzad", "halla", "aitask"],
+    "image": "assets/images/certificates/capm-certified-assistant.png",
+    "imageAlt": {
+      "ar": "معاينة اعتماد CAPM",
+      "en": "Preview of the CAPM credential"
+    },
+    "file": "assets/images/certificates/capm-certified-assistant.png",
+    "url": ""
+  },
+  {
+    "id": "strategic-planning-smes",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": true,
+    "name": {
+      "ar": "التخطيط الاستراتيجي للمنظمات الصغيرة والمتوسطة",
+      "en": "Strategic Planning for Small and Medium Organizations"
+    },
+    "issuer": {
+      "ar": "منشآت",
+      "en": "Monsha'at"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "يرتبط مباشرة بتطوير المشاريع الريادية واتخاذ القرار المؤسسي.",
+      "en": "Directly relevant to startup development and organizational decision-making."
+    },
+    "skills": ["project-management"],
+    "projects": ["halla"],
+    "image": "assets/images/certificates/strategic-planning-smes-linkedin.PNG",
+    "imageAlt": {
+      "ar": "معاينة شهادة التخطيط الاستراتيجي",
+      "en": "Preview of the strategic planning certificate"
+    },
+    "file": "assets/files/certificates/strategic-planning-smes.pdf",
+    "url": ""
+  },
+  {
+    "id": "creative-thinking",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "التفكير الإبداعي",
+      "en": "Creative Thinking"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "داعم مباشر لعمليات توليد الأفكار وصناعة الحلول.",
+      "en": "Supports ideation and solution design work."
+    },
+    "skills": ["ux", "project-management"],
+    "projects": ["mihbara", "halla"],
+    "image": "assets/images/certificates/creative-thinking.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة التفكير الإبداعي",
+      "en": "Preview of the creative thinking certificate"
+    },
+    "file": "assets/files/certificates/creative-thinking.pdf",
+    "url": ""
+  },
+  {
+    "id": "confidence-at-work",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "التواصل بثقة في بيئة العمل",
+      "en": "Communication with Confidence at Work"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "يعزز العرض والإقناع والتواصل المهني داخل الفرق.",
+      "en": "Strengthens presentation, persuasion, and professional team communication."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/confidence-at-work.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة التواصل بثقة",
+      "en": "Preview of the confidence at work certificate"
+    },
+    "file": "assets/files/certificates/confidence-at-work.pdf",
+    "url": ""
+  },
+  {
+    "id": "future-skills-basics",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "المهارات الأساسية لطريق المستقبل",
+      "en": "Future Skills Essentials"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "بناء ذهنية التطور المهني والاستعداد لمسارات العمل الحديثة.",
+      "en": "Builds a modern career mindset and future readiness."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/future-skills-basics.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة المهارات الأساسية لطريق المستقبل",
+      "en": "Preview of the future skills essentials certificate"
+    },
+    "file": "assets/files/certificates/future-skills-basics.pdf",
+    "url": ""
+  },
+  {
+    "id": "freelance-business",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "كيف تملك عملك الحر",
+      "en": "How to Own Your Freelance Business"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "يمس الاستقلالية المهنية والتعامل مع العملاء وتسعير الجهد.",
+      "en": "Touches on freelance independence, client work, and pricing."
+    },
+    "skills": ["project-management"],
+    "projects": [],
+    "image": "assets/images/certificates/freelance-business.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة كيف تملك عملك الحر",
+      "en": "Preview of the freelance business certificate"
+    },
+    "file": "assets/files/certificates/freelance-business.pdf",
+    "url": ""
+  },
+  {
+    "id": "digital-marketing-fundamentals",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "أساسيات التسويق الرقمي",
+      "en": "Fundamentals of Digital Marketing"
+    },
+    "issuer": {
+      "ar": "جهة تدريبية",
+      "en": "Training Provider"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "معرفة تسويقية مفيدة للمشاريع الريادية والعروض الرقمية.",
+      "en": "Useful marketing knowledge for startup work and digital presence."
+    },
+    "skills": [],
+    "projects": ["halla"],
+    "image": "assets/images/certificates/digital-marketing-fundamentals.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة أساسيات التسويق الرقمي",
+      "en": "Preview of the digital marketing fundamentals certificate"
+    },
+    "file": "assets/files/certificates/digital-marketing-fundamentals.pdf",
+    "url": ""
+  },
+  {
+    "id": "podcast-creation",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "كيف تصنع البودكاست",
+      "en": "How to Create a Podcast"
+    },
+    "issuer": {
+      "ar": "برنامج تدريبي افتراضي",
+      "en": "Virtual Training Program"
+    },
+    "year": "2023",
+    "summary": {
+      "ar": "يدعم مهارات السرد، الإلقاء، وإدارة المحتوى الصوتي.",
+      "en": "Supports storytelling, delivery, and audio content management."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/podcast-creation.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة صناعة البودكاست",
+      "en": "Preview of the podcast creation certificate"
+    },
+    "file": "assets/files/certificates/podcast-creation.pdf",
+    "url": ""
+  },
+  {
+    "id": "amazon-academy",
+    "category": "professional",
+    "kind": {
+      "ar": "شهادة",
+      "en": "Certificate"
+    },
+    "featured": false,
+    "name": {
+      "ar": "Amazon Academy",
+      "en": "Amazon Academy"
+    },
+    "issuer": {
+      "ar": "Amazon Academy",
+      "en": "Amazon Academy"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "شهادة تطوير مهني مضافة كأصل داعم داخل البورتفوليو.",
+      "en": "Professional development certificate added as supporting portfolio evidence."
+    },
+    "skills": [],
+    "projects": [],
+    "image": "assets/images/certificates/amazon-academy.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة Amazon Academy",
+      "en": "Preview of the Amazon Academy certificate"
+    },
+    "file": "assets/files/certificates/amazon-academy.pdf",
+    "url": ""
+  },
+  {
+    "id": "monshaat-pre-incubation",
+    "category": "participation",
+    "kind": {
+      "ar": "برنامج",
+      "en": "Program"
+    },
+    "featured": true,
+    "name": {
+      "ar": "برنامج ما قبل الاحتضان للمنشآت",
+      "en": "Monsha'at Pre-Incubation Program"
+    },
+    "issuer": {
+      "ar": "منشآت",
+      "en": "Monsha'at"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "إثبات قوي لمرور مشروع حلة بمسار ريادي منظم.",
+      "en": "Strong proof that Halla went through a structured startup track."
+    },
+    "skills": ["project-management", "leadership"],
+    "projects": ["halla"],
+    "image": "assets/images/certificates/monshaat-pre-incubation.png",
+    "imageAlt": {
+      "ar": "معاينة إثبات برنامج ما قبل الاحتضان",
+      "en": "Preview of the pre-incubation program proof"
+    },
+    "file": "assets/images/certificates/monshaat-pre-incubation.png",
+    "url": ""
+  },
+  {
+    "id": "takamul-summer-training",
+    "category": "participation",
+    "kind": {
+      "ar": "شهادة تدريب",
+      "en": "Training Certificate"
+    },
+    "featured": true,
+    "name": {
+      "ar": "شهادة التدريب الصيفي لبرنامج تكامل",
+      "en": "Takamul Summer Training Certificate"
+    },
+    "issuer": {
+      "ar": "برنامج تكامل",
+      "en": "Takamul Program"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "دليل على مشاركة تدريبية عملية ضمن برنامج منظم.",
+      "en": "Proof of practical participation in a structured summer program."
+    },
+    "skills": ["leadership", "project-management"],
+    "projects": [],
+    "image": "assets/images/certificates/takamul-summer-training.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة التدريب الصيفي لبرنامج تكامل",
+      "en": "Preview of the Takamul summer training certificate"
+    },
+    "file": "assets/images/certificates/takamul-summer-training.jpg",
+    "url": ""
+  },
+  {
+    "id": "consulting-championship-2025",
+    "category": "participation",
+    "kind": {
+      "ar": "مشاركة",
+      "en": "Participation"
+    },
+    "featured": true,
+    "name": {
+      "ar": "المشاركة في بطولة الاستشارات 2025",
+      "en": "Participating in the Consulting Championship 2025"
+    },
+    "issuer": {
+      "ar": "بطولة استشارية",
+      "en": "Consulting Championship"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "يعكس العمل ضمن فريق متعدد التخصصات في حل استراتيجي.",
+      "en": "Shows multidisciplinary teamwork on a strategic problem."
+    },
+    "skills": ["data-analysis", "project-management", "leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/consulting-championship-2025.png",
+    "imageAlt": {
+      "ar": "معاينة مشاركة بطولة الاستشارات 2025",
+      "en": "Preview of the Consulting Championship participation proof"
+    },
+    "file": "assets/images/certificates/consulting-championship-2025.png",
+    "url": ""
+  },
+  {
+    "id": "internal-audit-forum-speaker",
+    "category": "participation",
+    "kind": {
+      "ar": "متحدث",
+      "en": "Speaker"
+    },
+    "featured": true,
+    "name": {
+      "ar": "مشاركة كمتحدث في منتدى المراجعة الداخلية",
+      "en": "Speaker at the Internal Audit Forum"
+    },
+    "issuer": {
+      "ar": "منتدى المراجعة الداخلية",
+      "en": "Internal Audit Forum"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "إثبات دور تمثيلي وتقديمي أمام جمهور مهني.",
+      "en": "Proof of a speaking and representative role before a professional audience."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/internal-audit-forum-speaker.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة المشاركة كمتحدث",
+      "en": "Preview of the speaker participation certificate"
+    },
+    "file": "assets/images/certificates/internal-audit-forum-speaker.png",
+    "url": ""
+  },
+  {
+    "id": "pti-active-member",
+    "category": "participation",
+    "kind": {
+      "ar": "عضوية",
+      "en": "Membership"
+    },
+    "featured": false,
+    "name": {
+      "ar": "عضو فعّال في نادي PTI",
+      "en": "Active Member of the PTI Club"
+    },
+    "issuer": {
+      "ar": "Peer Tutoring Initiative Club",
+      "en": "Peer Tutoring Initiative Club"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "إثبات مشاركة فعالة في بيئة طلابية قيادية.",
+      "en": "Proof of active involvement in a student leadership environment."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/pti-active-member.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة العضوية الفعالة في نادي PTI",
+      "en": "Preview of the PTI active member certificate"
+    },
+    "file": "assets/files/certificates/pti-active-member.pdf",
+    "url": ""
+  },
+  {
+    "id": "bokra-program",
+    "category": "participation",
+    "kind": {
+      "ar": "برنامج",
+      "en": "Program"
+    },
+    "featured": false,
+    "name": {
+      "ar": "مشاركة برنامج بكرة",
+      "en": "Bokra Program Participation"
+    },
+    "issuer": {
+      "ar": "برنامج بكرة",
+      "en": "Bokra Program"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "يدعم دورك في العمل التعليمي والإشراف على المشاريع.",
+      "en": "Supports your mentoring and project supervision role."
+    },
+    "skills": ["leadership", "project-management"],
+    "projects": [],
+    "image": "assets/images/certificates/bokra-program.png",
+    "imageAlt": {
+      "ar": "معاينة مشاركة برنامج بكرة",
+      "en": "Preview of the Bokra program participation proof"
+    },
+    "file": "assets/images/certificates/bokra-program.png",
+    "url": ""
+  },
+  {
+    "id": "cybersecurity-awareness-expo-2025",
+    "category": "participation",
+    "kind": {
+      "ar": "مشاركة",
+      "en": "Participation"
+    },
+    "featured": false,
+    "name": {
+      "ar": "المشاركة في معرض التوعية بالأمن السيبراني نبه 2025",
+      "en": "Participation in Nabbih Cybersecurity Awareness Expo 2025"
+    },
+    "issuer": {
+      "ar": "معرض نبه",
+      "en": "Nabbih Expo"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "إثبات حضور ومشاركة في فعالية تقنية توعوية.",
+      "en": "Proof of participation in a technical awareness event."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/cybersecurity-awareness-expo-2025.png",
+    "imageAlt": {
+      "ar": "معاينة مشاركة معرض الأمن السيبراني",
+      "en": "Preview of the cybersecurity awareness expo participation proof"
+    },
+    "file": "assets/images/certificates/cybersecurity-awareness-expo-2025.png",
+    "url": ""
+  },
+  {
+    "id": "kfu-nights-participation",
+    "category": "participation",
+    "kind": {
+      "ar": "مشاركة",
+      "en": "Participation"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة مشاركة في ليالي كفو",
+      "en": "KFU Nights Participation"
+    },
+    "issuer": {
+      "ar": "KFU",
+      "en": "KFU"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "مشاركة جامعية موثقة ضمن فعالية طلابية.",
+      "en": "Documented university participation in a student event."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/kfu-nights-participation.png",
+    "imageAlt": {
+      "ar": "معاينة شهادة مشاركة ليالي كفو",
+      "en": "Preview of the KFU Nights participation certificate"
+    },
+    "file": "assets/images/certificates/kfu-nights-participation.png",
+    "url": ""
+  },
+  {
+    "id": "foundation-day-film",
+    "category": "participation",
+    "kind": {
+      "ar": "مشاركة",
+      "en": "Participation"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة مشاركة في فيلم يوم التأسيس",
+      "en": "Foundation Day Film Participation"
+    },
+    "issuer": {
+      "ar": "جهة تنظيمية",
+      "en": "Organizing Body"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "إثبات مساهمة في نشاط إعلامي/مجتمعي.",
+      "en": "Proof of contribution to a media or community activity."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/foundation-day-film.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة مشاركة فيلم يوم التأسيس",
+      "en": "Preview of the Foundation Day film participation certificate"
+    },
+    "file": "assets/files/certificates/foundation-day-film.pdf",
+    "url": ""
+  },
+  {
+    "id": "sanaa-hackathon",
+    "category": "participation",
+    "kind": {
+      "ar": "مشاركة",
+      "en": "Participation"
+    },
+    "featured": false,
+    "name": {
+      "ar": "مشاركة هاكاثون سنا",
+      "en": "Sanaa Hackathon Participation"
+    },
+    "issuer": {
+      "ar": "هاكاثون سنا",
+      "en": "Sanaa Hackathon"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "إثبات مشاركة في بيئة تحديات وابتكار.",
+      "en": "Proof of participation in an innovation challenge environment."
+    },
+    "skills": ["leadership", "project-management"],
+    "projects": [],
+    "image": "assets/images/certificates/sanaa-hackathon.jpg",
+    "imageAlt": {
+      "ar": "معاينة إثبات المشاركة في هاكاثون سنا",
+      "en": "Preview of the Sanaa hackathon participation proof"
+    },
+    "file": "assets/files/certificates/sanaa-hackathon.pdf",
+    "url": ""
+  },
+  {
+    "id": "arabic-hackathon-best-project",
+    "category": "proofs",
+    "kind": {
+      "ar": "جائزة",
+      "en": "Award"
+    },
+    "featured": true,
+    "name": {
+      "ar": "أفضل مشروع في هاكاثون اللغة العربية",
+      "en": "Best Project in the Arabic Hackathon"
+    },
+    "issuer": {
+      "ar": "هاكاثون اللغة العربية",
+      "en": "Arabic Hackathon"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "إثبات مرئي مباشر لإنجاز مشروع محبرة في مسار الهاكاثون.",
+      "en": "Direct visual proof of Mihbara's achievement in the hackathon."
+    },
+    "skills": ["ux", "ai", "leadership"],
+    "projects": ["mihbara"],
+    "image": "assets/images/certificates/arabic-hackathon-best-project.jpg",
+    "imageAlt": {
+      "ar": "صورة شهادة أفضل مشروع في هاكاثون اللغة العربية",
+      "en": "Image of the Best Project Arabic Hackathon certificate"
+    },
+    "file": "assets/images/certificates/arabic-hackathon-best-project.jpg",
+    "url": ""
+  },
+  {
+    "id": "arabic-hackathon-participation",
+    "category": "proofs",
+    "kind": {
+      "ar": "إثبات مشاركة",
+      "en": "Participation Proof"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة مشاركة في هاكاثون اللغة العربية",
+      "en": "Arabic Hackathon Participation Certificate"
+    },
+    "issuer": {
+      "ar": "هاكاثون اللغة العربية",
+      "en": "Arabic Hackathon"
+    },
+    "year": "2024",
+    "summary": {
+      "ar": "دليل إضافي على دخول المسابقة والوصول لمرحلة العرض.",
+      "en": "Additional proof of entering the competition and reaching the pitch stage."
+    },
+    "skills": ["ux", "ai", "leadership"],
+    "projects": ["mihbara"],
+    "image": "assets/images/certificates/arabic-hackathon-participation.jpg",
+    "imageAlt": {
+      "ar": "صورة شهادة المشاركة في هاكاثون اللغة العربية",
+      "en": "Image of the Arabic Hackathon participation certificate"
+    },
+    "file": "assets/images/certificates/arabic-hackathon-participation.jpg",
+    "url": ""
+  },
+  {
+    "id": "mohibah-thanks",
+    "category": "proofs",
+    "kind": {
+      "ar": "شكر وتقدير",
+      "en": "Appreciation"
+    },
+    "featured": false,
+    "name": {
+      "ar": "شهادة شكر من نادي رابطة موهبة",
+      "en": "Certificate of Appreciation from Mohibah Club"
+    },
+    "issuer": {
+      "ar": "نادي رابطة موهبة",
+      "en": "Mohibah Club"
+    },
+    "year": "2025",
+    "summary": {
+      "ar": "إثبات تقدير رسمي مرتبط بالمشاركة الطلابية.",
+      "en": "Formal appreciation proof tied to student contribution."
+    },
+    "skills": ["leadership"],
+    "projects": [],
+    "image": "assets/images/certificates/mohibah-thanks.jpg",
+    "imageAlt": {
+      "ar": "معاينة شهادة الشكر من نادي رابطة موهبة",
+      "en": "Preview of the Mohibah appreciation certificate"
+    },
+    "file": "assets/images/certificates/mohibah-thanks.jpg",
     "url": ""
   }
 ]

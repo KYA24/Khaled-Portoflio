@@ -19,16 +19,21 @@
       "ar": "تطبيق متعدد المنصات لعدة فئات مستخدمين.",
       "en": "Cross-platform app for multiple user types."
     },
+    "image": "assets/images/projects/alzad.jpg",
+    "imageAlt": {
+      "ar": "صورة فريق الزاد أثناء عرض مشروع التخرج",
+      "en": "Al-Zad team during the graduation project presentation"
+    },
     "longDescription": {
       "ar": "مشروع تخرج متكامل على iOS وAndroid مع خلفية Laravel وذكاء اصطناعي. أجريت دراسة جدوى كاملة، حللت الأنظمة، صممت بـ Figma، وطورت بـ Flutter.",
       "en": "Full graduation project on iOS and Android with Laravel backend and AI integration. Conducted feasibility study, systems analysis, designed with Figma, and built with Flutter."
     },
     "roles": {
-      "ar": ["محلل أنظمة", "مصمم UX/UI", "مطور Flutter", "دراسة جدوى"],
-      "en": ["Systems Analyst", "UX/UI Designer", "Flutter Developer", "Feasibility Study"]
+      "ar": ["محلل أنظمة", "مصمم UX/UI", "مطور Flutter", "دراسة جدوى", "مدير مشروع"],
+      "en": ["Systems Analyst", "UX/UI Designer", "Flutter Developer", "Feasibility Study", "Project Manager"]
     },
-    "skills": ["flutter", "systems-analysis", "ux", "ai"],
-    "certificates": ["flutter-bc", "ux-bc"],
+    "skills": ["flutter", "systems-analysis", "ux", "ai", "project-management"],
+    "certificates": ["google-ux-bootcamp", "flutter-dart-bootcamp-kau", "google-ux-course", "ux-mindset-practice", "flutter-certificate-1", "intro-sql", "capm-certified-assistant"],
     "links": {
       "demo": "",
       "github": "",
@@ -56,6 +61,11 @@
       "ar": "خدمات سياحية للأحساء. فاز باحتضان CodeLab · Huawei.",
       "en": "Tourism services app for Al-Ahsa. Won CodeLab incubation."
     },
+    "image": "assets/images/projects/halla-ui.png",
+    "imageAlt": {
+      "ar": "واجهة مشروع حلة للتطبيق السياحي",
+      "en": "Halla tourism app UI"
+    },
     "longDescription": {
       "ar": "مشروع ريادي سياحي. صممت الواجهات وطورت التطبيق وأدرت المشروع. شارك في هاكاثونات وبرنامج منشآت 8 أسابيع.",
       "en": "Startup tourism project. Designed UI, developed the app, managed the project. Participated in hackathons and Monsha'at pre-accelerator for 8 weeks."
@@ -65,7 +75,7 @@
       "en": ["UX/UI Designer", "Flutter Developer", "Project Manager"]
     },
     "skills": ["flutter", "ux", "project-management"],
-    "certificates": ["flutter-bc"],
+    "certificates": ["google-ux-bootcamp", "flutter-dart-bootcamp-kau", "google-ux-course", "ux-mindset-practice", "framer-tool", "flutter-certificate-1", "strategic-planning-smes", "creative-thinking", "digital-marketing-fundamentals", "monshaat-pre-incubation"],
     "links": {
       "demo": "",
       "github": "",
@@ -101,16 +111,21 @@
       "ar": "منصة AI لصناعة المحتوى العربي. المركز الثالث في هاكاثون اللغة العربي من وزارة الثقافة.",
       "en": "AI Arabic content platform. 1st place, only winner from KFU."
     },
+    "image": "assets/images/achievements/mihbara-local.jpg",
+    "imageAlt": {
+      "ar": "شهادة فوز محبرة في هاكاثون اللغة العربية",
+      "en": "Mihbara local Arabic hackathon award certificate"
+    },
     "longDescription": {
       "ar": "منصة ذكاء اصطناعي للكتاب العرب. قدت الفريق في 36 ساعة للفوز بالمركز الثالث في هاكاثون وزارة الثقافة.",
       "en": "AI platform for Arabic content creation. Led team through a 36-hour hackathon, designed full UX, and won 1st place at Ministry of Culture."
     },
     "roles": {
-      "ar": ["قائد UX/UI", "قيادة الفريق", "تصميم العرض"],
-      "en": ["UX/UI Lead", "Team Leadership", "Pitch Design"]
+      "ar": ["قائد UX/UI", "قيادة الفريق", "تصميم العرض", "مدير مشروع"],
+      "en": ["UX/UI Lead", "Team Leadership", "Pitch Design", "Project Manager"]
     },
-    "skills": ["ux", "ai", "leadership"],
-    "certificates": ["ux-bc"],
+    "skills": ["ux", "ai", "leadership", "project-management"],
+    "certificates": ["google-ux-bootcamp", "google-ux-course", "ux-mindset-practice", "creative-thinking", "arabic-hackathon-best-project", "arabic-hackathon-participation"],
     "links": {
       "demo": "",
       "github": "",
@@ -151,11 +166,11 @@
       "en": "Open source Python tool using OCR and Gemma via Ollama. Designed parsing logic, output schema, and CLI interface."
     },
     "roles": {
-      "ar": ["مطور Python", "مهندس AI", "Open Source"],
-      "en": ["Python Developer", "AI Engineer", "Open Source"]
+      "ar": ["مطور Python", "مهندس AI", "Open Source", "مدير مشروع"],
+      "en": ["Python Developer", "AI Engineer", "Open Source", "Project Manager"]
     },
-    "skills": ["python", "ai"],
-    "certificates": [],
+    "skills": ["python", "ai", "project-management"],
+    "certificates": ["chatgpt-content-creator", "mastering-ai-chatgpt"],
     "links": {
       "demo": "",
       "github": "",
@@ -191,16 +206,21 @@
       "ar": "داشبورد ويب لحجز مواعيد الحلاقة وإدارة الطلبات والتقييمات.",
       "en": "Web dashboard for booking appointments, managing orders and reviews."
     },
+    "image": "assets/images/projects/barbershop.jpg",
+    "imageAlt": {
+      "ar": "واجهة مشروع Barbershop",
+      "en": "Barbershop project interface"
+    },
     "longDescription": {
       "ar": "نظام داشبورد ويب لإدارة صالون حلاقة. يشمل قائمة انتظار الطلبات، التقييمات، وإدارة الموظفين. طورت الواجهة الأمامية والخلفية.",
       "en": "Web dashboard system for a barbershop. Includes order queue, reviews/ratings, and staff management. Developed both frontend and backend."
     },
     "roles": {
-      "ar": ["مصمم UI", "مطور الواجهة الأمامية", "تصميم النظام"],
-      "en": ["UI Designer", "Frontend Developer", "System Design"]
+      "ar": ["مصمم UI", "مطور الواجهة الأمامية", "تصميم النظام", "مدير مشروع"],
+      "en": ["UI Designer", "Frontend Developer", "System Design", "Project Manager"]
     },
-    "skills": ["ux", "web-frontend"],
-    "certificates": [],
+    "skills": ["ux", "web-frontend", "project-management"],
+    "certificates": ["bootstrap-web-interfaces"],
     "links": {
       "demo": "",
       "github": "",
@@ -233,11 +253,11 @@
       "en": "Structured Notion database + Telegram Bot + ElevenLabs voice + Cloudflare + NLP layer for automatic data entry."
     },
     "roles": {
-      "ar": ["مهندس الأنظمة", "مطور Automation", "تكامل AI"],
-      "en": ["Systems Engineer", "Automation Dev", "AI Integration"]
+      "ar": ["مهندس الأنظمة", "مطور Automation", "تكامل AI", "مدير مشروع"],
+      "en": ["Systems Engineer", "Automation Dev", "AI Integration", "Project Manager"]
     },
-    "skills": ["python", "ai", "automation", "systems-analysis"],
-    "certificates": [],
+    "skills": ["python", "ai", "automation", "systems-analysis", "project-management"],
+    "certificates": ["chatgpt-content-creator", "mastering-ai-chatgpt", "intro-sql", "capm-certified-assistant"],
     "links": {
       "demo": "",
       "github": "",

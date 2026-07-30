@@ -52,6 +52,10 @@ body {
   line-height: 1.75;
 }
 
+body.viewer-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -237,6 +241,19 @@ nav {
   background: var(--accent-dim);
 }
 
+.filter-total {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  margin-inline-start: .35rem;
+  padding-inline: .35rem;
+  border-radius: 999px;
+  background: rgba(122, 174, 212, .12);
+  color: inherit;
+  font: 11px "IBM Plex Mono", monospace;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -249,7 +266,7 @@ nav {
   text-align: center;
 }
 
-.st + .st {
+.st+.st {
   border-inline-start: 1px solid var(--border);
 }
 
@@ -338,6 +355,36 @@ nav {
   background: var(--surface2);
 }
 
+.project-media {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background:
+    linear-gradient(180deg, rgba(122, 174, 212, .14), rgba(13, 30, 48, .08)),
+    var(--accent-dim);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
+.project-img,
+.achievement-img,
+.cf-img {
+  cursor: zoom-in;
+}
+
 .pcard-top,
 .career-head,
 .skcard-head,
@@ -372,7 +419,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   gap: .9rem;
-  min-height: 210px;
+  min-height: 260px;
 }
 
 .career-card-link {
@@ -385,6 +432,21 @@ nav {
   height: 44px;
   color: var(--accent);
   font: 700 12px "IBM Plex Mono", monospace;
+}
+
+.career-cover {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--accent-dim);
+}
+
+.career-cover img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .career-title {
@@ -570,16 +632,60 @@ nav {
   margin-top: .45rem;
 }
 
+.achievement-media,
+.cf-media {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(122, 174, 212, .14), rgba(13, 30, 48, .08)),
+    var(--accent-dim);
+}
+
+.achievement-media {
+  margin-bottom: 1rem;
+}
+
+.project-detail-media,
+.leadership-media {
+  margin-bottom: 1.1rem;
+}
+
+.leadership-body {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.leadership-copy {
+  min-width: 0;
+}
+
+.leadership-thumb {
+  width: 110px;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 0;
+  padding: .4rem;
+  justify-self: start;
+}
+
+.leadership-thumb .achievement-img {
+  border-radius: 6px;
+}
+
 .achievement-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
   display: block;
-  border-radius: 9px;
-  border: 1px solid var(--border);
-  margin-bottom: 1rem;
-  background: var(--accent-dim);
+  border-radius: 8px;
 }
 
 .tag,
@@ -652,6 +758,151 @@ nav {
 .cf-y {
   color: var(--muted);
   font-size: 11px;
+}
+
+.cert-section {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  margin-bottom: 1.6rem;
+}
+
+.cert-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.cert-section-sub,
+.cf-summary {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: .9rem;
+}
+
+.cf {
+  padding: 1rem;
+}
+
+.cf-media {
+  margin-bottom: .9rem;
+}
+
+.cf-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
+.cf-meta,
+.cf-actions {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  flex-wrap: wrap;
+}
+
+.cf-meta {
+  justify-content: flex-end;
+}
+
+.cf-actions {
+  margin-top: .2rem;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+}
+
+.image-viewer.open {
+  display: block;
+}
+
+.image-viewer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 10, 18, .82);
+  backdrop-filter: blur(8px);
+}
+
+.image-viewer-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100vw - 1.5rem), 1240px);
+  height: min(calc(100dvh - 1.5rem), 920px);
+  margin: .75rem auto;
+  padding: clamp(.6rem, 2vw, 1rem);
+  display: grid;
+  place-items: center;
+}
+
+.image-viewer-img {
+  max-width: 100%;
+  max-height: calc(100dvh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+  background: rgba(255, 255, 255, .02);
+}
+
+.image-viewer-close {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(8, 17, 30, .82);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .image-viewer-dialog {
+    width: calc(100vw - 1rem);
+    height: calc(100dvh - 1rem);
+    margin: .5rem auto;
+    padding: .5rem;
+  }
+
+  .image-viewer-img {
+    max-height: calc(100dvh - 2.25rem);
+    border-radius: 10px;
+  }
+
+  .image-viewer-close {
+    top: .75rem;
+    inset-inline-end: .75rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+
+  .leadership-body {
+    grid-template-columns: 1fr 88px;
+    gap: .8rem;
+  }
+
+  .leadership-thumb {
+    width: 88px;
+  }
 }
 
 .back {
@@ -738,6 +989,16 @@ nav {
   margin-bottom: 1.4rem;
 }
 
+.cert-toolbar {
+  justify-content: flex-start;
+  margin-bottom: 1.8rem;
+}
+
+.cert-toolbar .filters {
+  gap: .8rem;
+  row-gap: .8rem;
+}
+
 .divl {
   border: 0;
   border-top: 1px solid var(--border);
@@ -819,7 +1080,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .st + .st {
+  .st+.st {
     border-inline-start: 0;
     border-top: 1px solid var(--border);
   }

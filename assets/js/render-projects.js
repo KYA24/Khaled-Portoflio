@@ -2,7 +2,7 @@ let currentProjectFilter = "all";
 let currentProjectSearch = "";
 
 function renderProjectList(projects, skills) {
-  const filtered = projects.filter((project) => {
+  const filtered = sortProjectsForDisplay(projects.filter((project) => {
     const matchesFilter =
       currentProjectFilter === "all" ||
       (currentProjectFilter === "featured" && project.featured) ||
@@ -10,7 +10,7 @@ function renderProjectList(projects, skills) {
       (currentProjectFilter === "achievement" && project.category === "achievement");
     const haystack = `${t(project.title)} ${t(project.subtitle)} ${t(project.description)}`.toLowerCase();
     return matchesFilter && haystack.includes(currentProjectSearch.toLowerCase());
-  });
+  }));
   document.querySelector("[data-projects-list]").innerHTML = filtered.length
     ? filtered.map((project) => projectCard(project, skills)).join("")
     : `<div class="empty">${pageTitle("لا توجد مشاريع مطابقة.", "No matching projects.")}</div>`;

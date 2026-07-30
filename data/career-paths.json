@@ -7,17 +7,60 @@
       "en": "Project Management"
     },
     "description": {
-      "ar": "تخطيط وتنفيذ مشاريع تقنية وريادية، من تحليل الفكرة وحتى إدارة الفريق والتسليم.",
-      "en": "Planning and delivering technical and startup projects, from idea analysis to team coordination and execution."
+      "ar": "مسار يجمع التخطيط، قيادة الفرق، توثيق العمل، وتحويل الأفكار التقنية إلى مشاريع قابلة للتنفيذ.",
+      "en": "A path focused on planning, team leadership, documentation, and turning technical ideas into deliverable projects."
     },
     "summary": {
-      "ar": "مشاريع، فرق، توثيق، وتسليم.",
-      "en": "Projects, teams, documentation, delivery."
+      "ar": "تخطيط، فرق، وتسليم.",
+      "en": "Planning, teams, delivery."
     },
     "skills": ["project-management", "systems-analysis", "leadership", "automation"],
-    "certificates": ["capm", "strategic"],
-    "projects": ["halla", "alzad", "aitask"],
-    "achievements": ["linkedin-activity-7447724603549896704", "halla-codelab"]
+    "certificates": [
+      "capm-certified-assistant",
+      "strategic-planning-smes",
+      "monshaat-pre-incubation",
+      "consulting-championship-2025"
+    ],
+    "projects": ["alzad", "halla", "aitask"],
+    "achievements": ["linkedin-activity-7447724603549896704", "halla-codelab", "futech-leadership-award"],
+    "directWorks": [
+      {
+        "title": {
+          "ar": "إدارة مشروع حلة",
+          "en": "Managing Halla"
+        },
+        "description": {
+          "ar": "مشروع سياحي تقني مرّ بمسارات احتضان ومنافسات.",
+          "en": "A tourism-tech project that went through incubation and competitions."
+        },
+        "image": "assets/images/projects/halla-ui.png",
+        "href": "project.html?id=halla"
+      },
+      {
+        "title": {
+          "ar": "مشروع الزاد",
+          "en": "Al-Zad Project"
+        },
+        "description": {
+          "ar": "مشروع تخرج متكامل بتخطيط وتحليل وتنفيذ.",
+          "en": "A full graduation project with planning, analysis, and delivery."
+        },
+        "image": "assets/images/projects/alzad.jpg",
+        "href": "project.html?id=alzad"
+      },
+      {
+        "title": {
+          "ar": "إنجاز يونيثون",
+          "en": "Unithon Achievement"
+        },
+        "description": {
+          "ar": "إثبات مرئي لعمل جماعي ومنافسة دولية.",
+          "en": "Visual proof of teamwork in an international competition."
+        },
+        "image": "assets/images/achievements/unithon-global.jpg",
+        "href": "achievements.html"
+      }
+    ]
   },
   {
     "id": "motion-graphic",
@@ -27,17 +70,55 @@
       "en": "Motion Graphic"
     },
     "description": {
-      "ar": "تحويل الأفكار والعروض إلى محتوى بصري متحرك يخدم الشرح، التسويق، والعروض التقديمية.",
-      "en": "Turning ideas and pitches into animated visual content for explanation, marketing, and presentations."
+      "ar": "مسار للمواد البصرية والعروض والمحتوى المصمم؛ يحتاج لاحقًا إضافة نماذج مباشرة من البوستات والفيديوهات التي صممتها.",
+      "en": "A path for visual materials, pitch visuals, and designed content; direct post and video samples can be added here."
     },
     "summary": {
-      "ar": "تصميم بصري للعروض والمحتوى.",
-      "en": "Visual design for pitches and content."
+      "ar": "محتوى بصري وعروض.",
+      "en": "Visual content and pitches."
     },
     "skills": ["ux", "leadership"],
-    "certificates": ["ux-bc", "creative"],
+    "certificates": ["creative-thinking", "foundation-day-film", "podcast-creation", "digital-marketing-fundamentals"],
     "projects": ["mihbara", "halla"],
-    "achievements": ["mihbara-culture"]
+    "achievements": ["mihbara-culture"],
+    "directWorks": [
+      {
+        "title": {
+          "ar": "عرض محبرة",
+          "en": "Mihbara Pitch"
+        },
+        "description": {
+          "ar": "تصميم تجربة وعرض مشروع AI في هاكاثون اللغة العربية.",
+          "en": "UX and pitch design for an Arabic AI hackathon project."
+        },
+        "image": "assets/images/achievements/mihbara-local.jpg",
+        "href": "project.html?id=mihbara"
+      },
+      {
+        "title": {
+          "ar": "واجهة حلة",
+          "en": "Halla Interface"
+        },
+        "description": {
+          "ar": "تصميم بصري لواجهة تطبيق سياحي.",
+          "en": "Visual UI work for a tourism app."
+        },
+        "image": "assets/images/projects/halla-ui.png",
+        "href": "project.html?id=halla"
+      },
+      {
+        "title": {
+          "ar": "فيلم يوم التأسيس",
+          "en": "Foundation Day Film"
+        },
+        "description": {
+          "ar": "إثبات مشاركة في عمل إعلامي بصري.",
+          "en": "Proof of participation in a visual media piece."
+        },
+        "image": "assets/images/certificates/foundation-day-film.jpg",
+        "href": "certificates.html#foundation-day-film"
+      }
+    ]
   },
   {
     "id": "web-development",
@@ -47,17 +128,55 @@
       "en": "Web Development"
     },
     "description": {
-      "ar": "بناء واجهات ومواقع ولوحات تحكم واضحة، مع اهتمام بتجربة المستخدم وربطها باحتياج حقيقي.",
-      "en": "Building clear websites, interfaces, and dashboards with attention to UX and practical needs."
+      "ar": "مسار يركز على بناء واجهات ومواقع ولوحات تحكم واضحة، مع ربط التصميم باحتياج عملي.",
+      "en": "A path focused on building clear websites, interfaces, and dashboards tied to practical needs."
     },
     "summary": {
-      "ar": "واجهات ويب ولوحات تحكم.",
-      "en": "Web interfaces and dashboards."
+      "ar": "واجهات ولوحات تحكم.",
+      "en": "Interfaces and dashboards."
     },
     "skills": ["web-frontend", "ux", "systems-analysis"],
-    "certificates": ["bootstrap", "framer", "sql"],
-    "projects": ["barbershop", "aitask", "alzad"],
-    "achievements": []
+    "certificates": ["bootstrap-web-interfaces", "framer-tool", "intro-sql", "google-ux-course"],
+    "projects": ["barbershop", "alzad", "halla"],
+    "achievements": [],
+    "directWorks": [
+      {
+        "title": {
+          "ar": "Barbershop Dashboard",
+          "en": "Barbershop Dashboard"
+        },
+        "description": {
+          "ar": "واجهة ويب لإدارة الحجز والطلبات.",
+          "en": "A web dashboard for bookings and order management."
+        },
+        "image": "assets/images/projects/barbershop.jpg",
+        "href": "project.html?id=barbershop"
+      },
+      {
+        "title": {
+          "ar": "واجهة حلة",
+          "en": "Halla UI"
+        },
+        "description": {
+          "ar": "تصميم واجهات لتطبيق خدمات سياحية.",
+          "en": "Interface design for a tourism services app."
+        },
+        "image": "assets/images/projects/halla-ui.png",
+        "href": "project.html?id=halla"
+      },
+      {
+        "title": {
+          "ar": "مشروع الزاد",
+          "en": "Al-Zad"
+        },
+        "description": {
+          "ar": "نظام تطبيقي متكامل مع تحليل وواجهات.",
+          "en": "An integrated app system with analysis and UI work."
+        },
+        "image": "assets/images/projects/alzad.jpg",
+        "href": "project.html?id=alzad"
+      }
+    ]
   },
   {
     "id": "apps-ai",
@@ -67,16 +186,59 @@
       "en": "Apps & AI"
     },
     "description": {
-      "ar": "تطوير تطبيقات وأنظمة تستخدم Flutter وPython وLLM لحل مشاكل عملية وأتمتة العمل.",
-      "en": "Developing apps and systems with Flutter, Python, and LLMs to solve practical problems and automate workflows."
+      "ar": "مسار يجمع تطوير التطبيقات، أدوات Python، وتكاملات الذكاء الاصطناعي داخل أنظمة عملية.",
+      "en": "A path combining app development, Python tools, and AI integrations inside practical systems."
     },
     "summary": {
-      "ar": "تطبيقات، أدوات، وأتمتة ذكية.",
-      "en": "Apps, tools, and smart automation."
+      "ar": "تطبيقات وأتمتة ذكية.",
+      "en": "Apps and smart automation."
     },
     "skills": ["flutter", "python", "ai", "automation"],
-    "certificates": ["flutter-bc", "chatgpt"],
-    "projects": ["alzad", "shahidati", "aitask"],
-    "achievements": ["alzad-graduation", "mihbara-culture"]
+    "certificates": [
+      "flutter-dart-bootcamp-kau",
+      "flutter-certificate-1",
+      "chatgpt-content-creator",
+      "mastering-ai-chatgpt"
+    ],
+    "projects": ["alzad", "mihbara", "halla"],
+    "achievements": ["alzad-graduation", "mihbara-culture"],
+    "directWorks": [
+      {
+        "title": {
+          "ar": "تطبيق الزاد",
+          "en": "Al-Zad App"
+        },
+        "description": {
+          "ar": "تطبيق متعدد المنصات مع تكامل AI.",
+          "en": "A cross-platform app with AI integration."
+        },
+        "image": "assets/images/projects/alzad.jpg",
+        "href": "project.html?id=alzad"
+      },
+      {
+        "title": {
+          "ar": "منصة محبرة",
+          "en": "Mihbara Platform"
+        },
+        "description": {
+          "ar": "منصة ذكاء اصطناعي لصناعة المحتوى العربي.",
+          "en": "An AI platform for Arabic content creation."
+        },
+        "image": "assets/images/achievements/mihbara-local.jpg",
+        "href": "project.html?id=mihbara"
+      },
+      {
+        "title": {
+          "ar": "تطبيق حلة",
+          "en": "Halla App"
+        },
+        "description": {
+          "ar": "تطبيق سياحي بواجهة مستخدم مصممة.",
+          "en": "A tourism app with designed user interfaces."
+        },
+        "image": "assets/images/projects/halla-ui.png",
+        "href": "project.html?id=halla"
+      }
+    ]
   }
 ]

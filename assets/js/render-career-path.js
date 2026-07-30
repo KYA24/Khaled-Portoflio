@@ -1,14 +1,6 @@
 function certificateVisual(certificate) {
-  const image = certificate.image || certificate.thumbnail;
   return `<a class="visual-card" href="certificates.html#${encodeURIComponent(certificate.id)}">
-    ${image
-      ? `<img class="visual-img" src="${escapeHTML(image)}" alt="${escapeHTML(t(certificate.name))}" loading="lazy" onerror="this.closest('.visual-card').classList.add('visual-fallback'); this.remove()">`
-      : `<div class="certificate-visual">
-          <div class="certificate-mark">CERT</div>
-          <div class="certificate-name">${escapeHTML(t(certificate.name))}</div>
-          <div class="certificate-issuer">${escapeHTML(t(certificate.issuer))}</div>
-          <div class="certificate-year">${escapeHTML(certificate.year)}</div>
-        </div>`}
+    <img class="visual-img" src="${escapeHTML(certificate.image)}" alt="${escapeHTML(t(certificate.imageAlt || certificate.name))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
     <div class="visual-caption">
       <div class="pt">${escapeHTML(t(certificate.name))}</div>
       <div class="ps">${escapeHTML(t(certificate.issuer))}</div>
@@ -16,21 +8,12 @@ function certificateVisual(certificate) {
   </a>`;
 }
 
-function workVisual(item, type) {
-  const title = type === "project" ? t(item.title) : t(item.title);
-  const desc = type === "project" ? t(item.description) : t(item.description);
-  const href = type === "project" ? `project.html?id=${encodeURIComponent(item.id)}` : "achievements.html";
-  const image = item.image || item.thumbnail || "";
-  return `<a class="visual-card" href="${href}">
-    ${image
-      ? `<img class="visual-img" src="${escapeHTML(image)}" alt="${escapeHTML(t(item.imageAlt) || title)}" loading="lazy" onerror="this.closest('.visual-card').classList.add('visual-fallback'); this.remove()">`
-      : `<div class="work-visual">
-          <div class="work-icon">${escapeHTML(item.icon || (type === "project" ? "WORK" : "ACH"))}</div>
-          <div class="work-year">${escapeHTML(item.year || "")}</div>
-        </div>`}
+function directWorkVisual(work) {
+  return `<a class="visual-card" href="${escapeHTML(work.href || "#")}">
+    <img class="visual-img" src="${escapeHTML(work.image)}" alt="${escapeHTML(t(work.title))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
     <div class="visual-caption">
-      <div class="pt">${escapeHTML(title)}</div>
-      <div class="pd">${escapeHTML(desc)}</div>
+      <div class="pt">${escapeHTML(t(work.title))}</div>
+      <div class="pd">${escapeHTML(t(work.description))}</div>
     </div>
   </a>`;
 }
@@ -38,7 +21,7 @@ function workVisual(item, type) {
 async function renderCareerPathDetail() {
   renderShell("career-paths");
   try {
-    const { careerPaths, skills, certificates, projects, achievements } = await loadPortfolioData(["careerPaths", "skills", "certificates", "projects", "achievements"]);
+    const { careerPaths, skills, certificates } = await loadPortfolioData(["careerPaths", "skills", "certificates"]);
     const id = getQueryParam("id");
     const path = findById(careerPaths, id);
     const root = document.querySelector("[data-career-path-detail]");
@@ -48,9 +31,10 @@ async function renderCareerPathDetail() {
     }
 
     const relatedSkills = resolveSkills(path.skills, skills);
-    const relatedCertificates = (path.certificates || []).map((certId) => findById(certificates, certId)).filter(Boolean);
-    const relatedProjects = resolveProjects(path.projects, projects);
-    const relatedAchievements = (path.achievements || []).map((achievementId) => findById(achievements, achievementId)).filter(Boolean);
+    const relatedCertificates = (path.certificates || [])
+      .map((certId) => findById(certificates, certId))
+      .filter((certificate) => certificate && certificate.image);
+    const directWorks = (path.directWorks || []).filter((work) => work.image);
 
     root.innerHTML = `
       <a class="back" href="index.html#career-paths">← ${pageTitle("مساراتي", "Career Paths")}</a>
@@ -70,16 +54,17 @@ async function renderCareerPathDetail() {
       <section class="path-section">
         <div class="dslbl">${pageTitle("الشهادات", "Certificates")}</div>
         <div class="visual-grid">
-          ${relatedCertificates.length ? relatedCertificates.map(certificateVisual).join("") : `<div class="empty">${pageTitle("تضاف شهادات هذا المسار لاحقًا.", "Certificates for this path will be added later.")}</div>`}
+          ${relatedCertificates.map(certificateVisual).join("")}
         </div>
       </section>
 
       <section class="path-section">
         <div class="dslbl">${pageTitle("أعمال مباشرة", "Direct Work")}</div>
         <div class="visual-grid">
-          ${[...relatedAchievements.map((item) => workVisual(item, "achievement")), ...relatedProjects.map((item) => workVisual(item, "project"))].join("")}
+          ${directWorks.map(directWorkVisual).join("")}
         </div>
       </section>`;
+    setupImageViewer();
   } catch (error) {
     showError("[data-career-path-detail]", pageTitle("تعذر تحميل تفاصيل المسار.", "Could not load path details."));
     console.error(error);
