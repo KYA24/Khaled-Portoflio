@@ -20,10 +20,31 @@ async function renderHome() {
 
     document.querySelector("[data-home-career-paths]").innerHTML = (careerPaths || []).map((path) => {
       const pathSkills = resolveSkills(path.skills, skills).slice(0, 3);
-      const cover = (path.directWorks || []).find((work) => work.image);
+      const pathCertificates = (path.certificates || [])
+        .map((certId) => findById(certificates, certId))
+        .filter((certificate) => certificate && certificate.image)
+        .slice(0, 2);
+      const visualItems = [
+        ...(path.directWorks || []).filter((work) => work.image).slice(0, 2).map((work) => ({
+          image: work.image,
+          title: work.title,
+          label: pageTitle("عمل", "Work")
+        })),
+        ...pathCertificates.map((certificate) => ({
+          image: certificate.image,
+          title: certificate.name,
+          label: pageTitle("شهادة", "Cert")
+        }))
+      ].slice(0, 4);
       return `
         <a class="career-card career-card-link" href="career-path.html?id=${encodeURIComponent(path.id)}">
-          ${cover ? `<div class="career-cover"><img src="${escapeHTML(cover.image)}" alt="${escapeHTML(t(cover.title))}" loading="lazy" onerror="this.closest('.career-cover').remove()"></div>` : ""}
+          <div class="career-visual-map">
+            ${visualItems.map((item, index) => `
+              <div class="career-visual-item ${index === 0 ? "primary" : ""}">
+                <img src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.title))}" loading="lazy" onerror="this.closest('.career-visual-item').remove()">
+                <span>${escapeHTML(item.label)}</span>
+              </div>`).join("")}
+          </div>
           <div class="career-head">
             <div class="career-icon">${escapeHTML(path.icon)}</div>
             <div>

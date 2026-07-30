@@ -434,19 +434,43 @@ nav {
   font: 700 12px "IBM Plex Mono", monospace;
 }
 
-.career-cover {
+.career-visual-map {
+  display: grid;
+  grid-template-columns: 1.35fr .8fr;
+  grid-template-rows: repeat(3, 54px);
+  gap: 6px;
+}
+
+.career-visual-item {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: 8px;
   background: var(--accent-dim);
 }
 
-.career-cover img {
+.career-visual-item.primary {
+  grid-row: span 3;
+}
+
+.career-visual-item img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   display: block;
   object-fit: cover;
   object-position: center;
+}
+
+.career-visual-item span {
+  position: absolute;
+  inset-inline-start: 6px;
+  bottom: 6px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 5px;
+  background: rgba(8, 17, 30, .78);
+  color: #fff;
+  font: 10px "IBM Plex Mono", monospace;
 }
 
 .career-title {
@@ -537,6 +561,10 @@ nav {
   transition: all .15s;
 }
 
+.visual-frame {
+  position: relative;
+}
+
 .visual-card:hover {
   border-color: var(--accent);
 }
@@ -553,6 +581,32 @@ nav {
 .visual-img {
   object-fit: cover;
   object-position: center;
+}
+
+.visual-type,
+.visual-path {
+  position: absolute;
+  z-index: 1;
+  border-radius: 6px;
+  font: 10px "IBM Plex Mono", monospace;
+}
+
+.visual-type {
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  padding: 3px 7px;
+  background: var(--bw);
+  border: 1px solid var(--bwt);
+  color: var(--bwt);
+}
+
+.visual-path {
+  inset-inline: 8px;
+  bottom: 8px;
+  padding: 4px 8px;
+  background: rgba(8, 17, 30, .78);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
 }
 
 .certificate-visual,

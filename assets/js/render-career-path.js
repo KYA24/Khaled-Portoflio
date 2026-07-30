@@ -1,6 +1,10 @@
-function certificateVisual(certificate) {
+function certificateVisual(certificate, path) {
   return `<a class="visual-card" href="certificates.html#${encodeURIComponent(certificate.id)}">
-    <img class="visual-img" src="${escapeHTML(certificate.image)}" alt="${escapeHTML(t(certificate.imageAlt || certificate.name))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
+    <div class="visual-frame">
+      <img class="visual-img" src="${escapeHTML(certificate.image)}" alt="${escapeHTML(t(certificate.imageAlt || certificate.name))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
+      <span class="visual-type">${pageTitle("شهادة", "Certificate")}</span>
+      <span class="visual-path">${escapeHTML(t(path.title))}</span>
+    </div>
     <div class="visual-caption">
       <div class="pt">${escapeHTML(t(certificate.name))}</div>
       <div class="ps">${escapeHTML(t(certificate.issuer))}</div>
@@ -8,9 +12,13 @@ function certificateVisual(certificate) {
   </a>`;
 }
 
-function directWorkVisual(work) {
+function directWorkVisual(work, path) {
   return `<a class="visual-card" href="${escapeHTML(work.href || "#")}">
-    <img class="visual-img" src="${escapeHTML(work.image)}" alt="${escapeHTML(t(work.title))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
+    <div class="visual-frame">
+      <img class="visual-img" src="${escapeHTML(work.image)}" alt="${escapeHTML(t(work.title))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
+      <span class="visual-type">${pageTitle("عمل مباشر", "Direct Work")}</span>
+      <span class="visual-path">${escapeHTML(t(path.title))}</span>
+    </div>
     <div class="visual-caption">
       <div class="pt">${escapeHTML(t(work.title))}</div>
       <div class="pd">${escapeHTML(t(work.description))}</div>
@@ -54,14 +62,14 @@ async function renderCareerPathDetail() {
       <section class="path-section">
         <div class="dslbl">${pageTitle("الشهادات", "Certificates")}</div>
         <div class="visual-grid">
-          ${relatedCertificates.map(certificateVisual).join("")}
+          ${relatedCertificates.map((certificate) => certificateVisual(certificate, path)).join("")}
         </div>
       </section>
 
       <section class="path-section">
         <div class="dslbl">${pageTitle("أعمال مباشرة", "Direct Work")}</div>
         <div class="visual-grid">
-          ${directWorks.map(directWorkVisual).join("")}
+          ${directWorks.map((work) => directWorkVisual(work, path)).join("")}
         </div>
       </section>`;
     setupImageViewer();
