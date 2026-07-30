@@ -81,6 +81,80 @@
     "certificates": ["creative-thinking", "foundation-day-film", "podcast-creation", "digital-marketing-fundamentals"],
     "projects": ["mihbara", "halla"],
     "achievements": ["mihbara-culture"],
+    "featuredWorks": [
+      {
+        "title": {
+          "ar": "وش يربط العناصر الثلاثة الجاية؟",
+          "en": "What connects the next three elements?"
+        },
+        "description": {
+          "ar": "منشور محتوى بصري مبني على سؤال افتتاحي وتسلسل صفحات.",
+          "en": "A visual content post built around a hook question and a multi-page sequence."
+        },
+        "image": "assets/images/canva/motion-posts/what-connects-elements.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      },
+      {
+        "title": {
+          "ar": "ورشة نوشن: نظام واحد يدير كل شيء",
+          "en": "Notion Workshop: One system manages everything"
+        },
+        "description": {
+          "ar": "تصميم إعلان ورشة بتكوين بصري واضح ورسالة مباشرة.",
+          "en": "A workshop announcement design with clear composition and direct messaging."
+        },
+        "image": "assets/images/canva/motion-posts/notion-workshop.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      },
+      {
+        "title": {
+          "ar": "خالد يبسطها",
+          "en": "Khaled Simplifies"
+        },
+        "description": {
+          "ar": "نموذج هوية محتوى شخصي يوضح الأسلوب البصري والسلسلة.",
+          "en": "A personal content identity sample showing visual direction and series style."
+        },
+        "image": "assets/images/canva/motion-posts/khaled-simplifies.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      },
+      {
+        "title": {
+          "ar": "إعلان لقاء منتصف عام الذكاء الاصطناعي",
+          "en": "Midyear AI Event Announcement"
+        },
+        "description": {
+          "ar": "تصميم إعلان فعالية يجمع الضيوف والمعلومات الأساسية في مساحة واحدة.",
+          "en": "An event announcement design that combines speakers and key details in one layout."
+        },
+        "image": "assets/images/canva/motion-posts/midyear-ai-event.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      },
+      {
+        "title": {
+          "ar": "إعلان ملف أعمالي الجديد",
+          "en": "New Portfolio Launch"
+        },
+        "description": {
+          "ar": "تصميم إعلان إطلاق ملف أعمالي مع عرض سريع للمخرجات.",
+          "en": "A portfolio launch announcement with a quick visual proof of outputs."
+        },
+        "image": "assets/images/canva/motion-posts/portfolio-launch.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      },
+      {
+        "title": {
+          "ar": "منشور محتوى ذكاء وكيل",
+          "en": "AI Agent Content Post"
+        },
+        "description": {
+          "ar": "منشور تقني بصري يشرح فكرة أداة ذكاء اصطناعي بشكل مبسط.",
+          "en": "A technical visual post explaining an AI tool concept in a simple way."
+        },
+        "image": "assets/images/canva/motion-posts/ai-agent-content.png",
+        "href": "https://www.canva.com/folder/FAHQ4K7N-F8"
+      }
+    ],
     "directWorks": [
       {
         "title": {

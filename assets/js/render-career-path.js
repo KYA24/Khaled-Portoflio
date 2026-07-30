@@ -26,6 +26,20 @@ function directWorkVisual(work, path) {
   </a>`;
 }
 
+function featuredWorkVisual(work, path) {
+  return `<a class="visual-card featured-post-card" href="${escapeHTML(work.href || "#")}">
+    <div class="visual-frame featured-post-frame">
+      <img class="visual-img" src="${escapeHTML(work.image)}" alt="${escapeHTML(t(work.title))}" loading="lazy" data-full-image onerror="this.closest('.visual-card').remove()">
+      <span class="visual-type">${pageTitle("مختار", "Selected")}</span>
+      <span class="visual-path">${escapeHTML(t(path.title))}</span>
+    </div>
+    <div class="visual-caption">
+      <div class="pt">${escapeHTML(t(work.title))}</div>
+      <div class="pd">${escapeHTML(t(work.description))}</div>
+    </div>
+  </a>`;
+}
+
 async function renderCareerPathDetail() {
   renderShell("career-paths");
   try {
@@ -43,6 +57,7 @@ async function renderCareerPathDetail() {
       .map((certId) => findById(certificates, certId))
       .filter((certificate) => certificate && certificate.image);
     const directWorks = (path.directWorks || []).filter((work) => work.image);
+    const featuredWorks = (path.featuredWorks || []).filter((work) => work.image);
 
     root.innerHTML = `
       <a class="back" href="index.html#career-paths">← ${pageTitle("مساراتي", "Career Paths")}</a>
@@ -65,6 +80,13 @@ async function renderCareerPathDetail() {
           ${relatedCertificates.map((certificate) => certificateVisual(certificate, path)).join("")}
         </div>
       </section>
+
+      ${featuredWorks.length ? `<section class="path-section">
+        <div class="dslbl">${pageTitle("مختارات المنشورات", "Selected Posts")}</div>
+        <div class="visual-grid featured-post-grid">
+          ${featuredWorks.map((work) => featuredWorkVisual(work, path)).join("")}
+        </div>
+      </section>` : ""}
 
       <section class="path-section">
         <div class="dslbl">${pageTitle("أعمال مباشرة", "Direct Work")}</div>

@@ -583,6 +583,24 @@ nav {
   object-position: center;
 }
 
+.featured-post-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.featured-post-frame {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(122, 174, 212, .14), rgba(13, 30, 48, .08)),
+    var(--accent-dim);
+}
+
+.featured-post-card .visual-img {
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  padding: .55rem;
+}
+
 .visual-type,
 .visual-path {
   position: absolute;
