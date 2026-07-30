@@ -1,0 +1,82 @@
+[
+  {
+    "id": "project-management",
+    "icon": "PM",
+    "title": {
+      "ar": "إدارة مشاريع",
+      "en": "Project Management"
+    },
+    "description": {
+      "ar": "تخطيط وتنفيذ مشاريع تقنية وريادية، من تحليل الفكرة وحتى إدارة الفريق والتسليم.",
+      "en": "Planning and delivering technical and startup projects, from idea analysis to team coordination and execution."
+    },
+    "summary": {
+      "ar": "مشاريع، فرق، توثيق، وتسليم.",
+      "en": "Projects, teams, documentation, delivery."
+    },
+    "skills": ["project-management", "systems-analysis", "leadership", "automation"],
+    "certificates": ["capm", "strategic"],
+    "projects": ["halla", "alzad", "aitask"],
+    "achievements": ["linkedin-activity-7447724603549896704", "halla-codelab"]
+  },
+  {
+    "id": "motion-graphic",
+    "icon": "MG",
+    "title": {
+      "ar": "Motion Graphic",
+      "en": "Motion Graphic"
+    },
+    "description": {
+      "ar": "تحويل الأفكار والعروض إلى محتوى بصري متحرك يخدم الشرح، التسويق، والعروض التقديمية.",
+      "en": "Turning ideas and pitches into animated visual content for explanation, marketing, and presentations."
+    },
+    "summary": {
+      "ar": "تصميم بصري للعروض والمحتوى.",
+      "en": "Visual design for pitches and content."
+    },
+    "skills": ["ux", "leadership"],
+    "certificates": ["ux-bc", "creative"],
+    "projects": ["mihbara", "halla"],
+    "achievements": ["mihbara-culture"]
+  },
+  {
+    "id": "web-development",
+    "icon": "WEB",
+    "title": {
+      "ar": "تطوير مواقع",
+      "en": "Web Development"
+    },
+    "description": {
+      "ar": "بناء واجهات ومواقع ولوحات تحكم واضحة، مع اهتمام بتجربة المستخدم وربطها باحتياج حقيقي.",
+      "en": "Building clear websites, interfaces, and dashboards with attention to UX and practical needs."
+    },
+    "summary": {
+      "ar": "واجهات ويب ولوحات تحكم.",
+      "en": "Web interfaces and dashboards."
+    },
+    "skills": ["web-frontend", "ux", "systems-analysis"],
+    "certificates": ["bootstrap", "framer", "sql"],
+    "projects": ["barbershop", "aitask", "alzad"],
+    "achievements": []
+  },
+  {
+    "id": "apps-ai",
+    "icon": "AI",
+    "title": {
+      "ar": "تطبيقات وذكاء اصطناعي",
+      "en": "Apps & AI"
+    },
+    "description": {
+      "ar": "تطوير تطبيقات وأنظمة تستخدم Flutter وPython وLLM لحل مشاكل عملية وأتمتة العمل.",
+      "en": "Developing apps and systems with Flutter, Python, and LLMs to solve practical problems and automate workflows."
+    },
+    "summary": {
+      "ar": "تطبيقات، أدوات، وأتمتة ذكية.",
+      "en": "Apps, tools, and smart automation."
+    },
+    "skills": ["flutter", "python", "ai", "automation"],
+    "certificates": ["flutter-bc", "chatgpt"],
+    "projects": ["alzad", "shahidati", "aitask"],
+    "achievements": ["alzad-graduation", "mihbara-culture"]
+  }
+]

@@ -297,6 +297,7 @@ nav {
 }
 
 .pgrid,
+.career-grid,
 .skill-cards,
 .list-grid {
   display: grid;
@@ -304,7 +305,12 @@ nav {
   gap: .9rem;
 }
 
+.career-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .pcard,
+.career-card,
 .skcard,
 .dcard,
 .cf,
@@ -324,6 +330,7 @@ nav {
 }
 
 .pcard:hover,
+.career-card:hover,
 .skcard:hover,
 .cf:hover,
 .achievement-card:hover {
@@ -332,6 +339,7 @@ nav {
 }
 
 .pcard-top,
+.career-head,
 .skcard-head,
 .cf-h {
   display: flex;
@@ -341,6 +349,7 @@ nav {
 }
 
 .pcard-ico,
+.career-icon,
 .skcard-ico,
 .d-ico,
 .tlc-ico {
@@ -356,6 +365,169 @@ nav {
   width: 40px;
   height: 40px;
   font-size: 1.15rem;
+}
+
+.career-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .9rem;
+  min-height: 210px;
+}
+
+.career-card-link {
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.career-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--accent);
+  font: 700 12px "IBM Plex Mono", monospace;
+}
+
+.career-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: .25rem;
+}
+
+.career-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.career-mini-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.career-mini-skills span {
+  color: var(--text2);
+  font-size: 12px;
+}
+
+.career-mini-skills span + span::before {
+  content: "/";
+  color: var(--muted);
+  margin-inline-end: 6px;
+}
+
+.career-open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--accent);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  padding-top: .8rem;
+}
+
+.career-group {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+
+.career-label {
+  color: var(--text2);
+  font: 700 11px "IBM Plex Mono", monospace;
+}
+
+.path-hero {
+  margin-bottom: 1rem;
+}
+
+.path-section {
+  margin-top: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.text-skill-grid,
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .85rem;
+  margin-top: .85rem;
+}
+
+.text-skill {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--tag);
+  padding: 1rem;
+}
+
+.visual-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface2);
+  transition: all .15s;
+}
+
+.visual-card:hover {
+  border-color: var(--accent);
+}
+
+.visual-img,
+.certificate-visual,
+.work-visual {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  background: var(--accent-dim);
+}
+
+.visual-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.certificate-visual,
+.work-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .35rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.certificate-mark,
+.work-year {
+  color: var(--accent);
+  font: 700 11px "IBM Plex Mono", monospace;
+}
+
+.certificate-name,
+.work-icon {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.certificate-issuer,
+.certificate-year {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.work-icon {
+  font-size: 1.35rem;
+}
+
+.visual-caption {
+  padding: .9rem;
 }
 
 .skcard-ico {
@@ -653,6 +825,7 @@ footer {
   }
 
   .pgrid,
+  .career-grid,
   .skill-cards,
   .list-grid {
     grid-template-columns: 1fr;

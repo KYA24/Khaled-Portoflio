@@ -2,7 +2,7 @@ async function renderHome() {
   renderShell("home");
   try {
     const data = await loadPortfolioData();
-    const { profile, projects, skills, certificates, achievements, leadership } = data;
+    const { profile, projects, skills, careerPaths, certificates, achievements, leadership } = data;
     const nameParts = escapeHTML(t(profile.name)).split(" ");
     document.querySelector("[data-home-name]").innerHTML = `${nameParts[0] || ""} <em>${nameParts.slice(1).join(" ")}</em>`;
     document.querySelector("[data-home-role]").textContent = t(profile.role);
@@ -11,25 +11,24 @@ async function renderHome() {
     document.querySelector("[data-home-stats]").innerHTML = (profile.stats || []).map((stat) => `
       <div class="st"><span class="stn">${escapeHTML(stat.value)}</span><div class="stl">${escapeHTML(t(stat.label))}</div></div>`).join("");
 
-    const latestUpdates = achievements
-      .filter((item) => item.updatedAt)
-      .sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)))
-      .slice(0, 3);
-    document.querySelector("[data-home-updates]").innerHTML = latestUpdates.length
-      ? latestUpdates.map((item) => `
-        <div class="achievement-card update-card">
-          ${item.image ? `<img class="achievement-img" src="${escapeHTML(item.image)}" alt="${escapeHTML(t(item.imageAlt))}" loading="lazy" onerror="this.remove()">` : ""}
-          <div class="pcard-top">
-            <div><div class="pt">${escapeHTML(t(item.title))}</div><div class="ps">${escapeHTML(item.updatedAt || item.year || "")}</div></div>
-            <span class="badge badge-featured">${pageTitle("جديد", "New")}</span>
+    document.querySelector("[data-home-career-paths]").innerHTML = (careerPaths || []).map((path) => {
+      const pathSkills = resolveSkills(path.skills, skills).slice(0, 4);
+
+      return `
+        <a class="career-card career-card-link" href="career-path.html?id=${encodeURIComponent(path.id)}">
+          <div class="career-head">
+            <div class="career-icon">${escapeHTML(path.icon)}</div>
+            <div>
+              <h3 class="career-title">${escapeHTML(t(path.title))}</h3>
+              <p class="career-desc">${escapeHTML(t(path.summary) || t(path.description))}</p>
+            </div>
           </div>
-          <div class="pd">${escapeHTML(t(item.description))}</div>
-          <div class="tags">
-            ${item.url ? `<a class="lnk" href="${escapeHTML(item.url)}" target="_blank" rel="noreferrer">${pageTitle("فتح الرابط", "Open link")}</a>` : ""}
-            <a class="lnk" href="achievements.html">${pageTitle("كل الإنجازات", "All achievements")}</a>
+          <div class="career-mini-skills">
+            ${pathSkills.slice(0, 3).map((skill) => `<span>${escapeHTML(t(skill.name))}</span>`).join("")}
           </div>
-        </div>`).join("")
-      : `<div class="empty">${pageTitle("لا توجد تحديثات حديثة بعد.", "No recent updates yet.")}</div>`;
+          <div class="career-open">${pageTitle("فتح المسار", "Open path")} <span>→</span></div>
+        </a>`;
+    }).join("");
 
     document.querySelector("[data-featured-projects]").innerHTML = projects.filter((project) => project.featured).slice(0, 3).map((project) => projectCard(project, skills)).join("");
 

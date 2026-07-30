@@ -2,6 +2,7 @@ const DATA_FILES = {
   profile: "data/profile.json",
   projects: "data/projects.json",
   skills: "data/skills.json",
+  careerPaths: "data/career-paths.json",
   certificates: "data/certificates.json",
   achievements: "data/achievements.json",
   leadership: "data/leadership.json"

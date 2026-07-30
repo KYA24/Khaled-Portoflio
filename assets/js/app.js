@@ -10,6 +10,7 @@ function renderShell(activePage = "") {
   if (nav) {
     const links = [
       ["index.html", "home", "الرئيسية", "Home"],
+      ["index.html#career-paths", "career-paths", "مساراتي", "Career Paths"],
       ["projects.html", "projects", "المشاريع", "Projects"],
       ["skills.html", "skills", "المهارات", "Skills"],
       ["certificates.html", "certificates", "الشهادات", "Certificates"],
